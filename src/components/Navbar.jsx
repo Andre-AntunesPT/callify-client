@@ -18,7 +18,7 @@ function Navbar() {
           <button>Events</button>
         </Link>
         <Link to="/">
-          <button>Home</button>
+          <button>Profile</button>
         </Link>
         <Link to="/">
           <button>Home</button>
@@ -26,10 +26,10 @@ function Navbar() {
 
         {loggedIn && (
         <> 
-        <Link to="/projects">
-        <button>Projects</button>
+        <Link to="/rooms">
+        <button>Rooms</button>
         <button onClick={logout}>Logout</button>
-        <h3>hey there {user.email}</h3>
+        <h3>hey there {user.username}</h3>
       </Link> 
       </>
       )}
