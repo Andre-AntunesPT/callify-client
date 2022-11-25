@@ -4,7 +4,9 @@ function Navbar() {
   return (
     <>
       <input type="checkbox" id="navigation" />
-      <label for="navigation">+</label>
+      <label for="navigation" id="navigation-label">
+        +
+      </label>
       <nav>
         <Link to="/">
           <button>Home</button>
