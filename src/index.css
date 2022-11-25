@@ -25,6 +25,8 @@ nav {
   -webkit-transition: all 200ms ease-in;
   -o-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
+  z-index: 2;
+  background-color: white;
 }
 
 nav ul {
@@ -53,7 +55,7 @@ nav a {
 nav a:hover {
   background: #111;
 }
-label {
+label#navigation-label {
   display: block;
   font-family: "helvetica neue", helvetica, arial, sans-serif;
   font-weight: 700;
@@ -74,23 +76,35 @@ label {
   transition: all 200ms ease-in;
   z-index: 500;
 }
-input[type="checkbox"] {
+input#navigation[type="checkbox"] {
   display: none;
 }
-input[type="checkbox"]:checked ~ nav {
+input#navigation[type="checkbox"]:checked ~ nav {
   margin: 0;
 }
-input[type="checkbox"]:checked ~ label {
+input#navigation[type="checkbox"]:checked ~ label {
   right: 260px;
 }
-input[type="checkbox"]:checked ~ div {
+input#navigation[type="checkbox"]:checked ~ .Wrapper {
   transform: scale(0.8) translateX(-25vw) translateZ(0) !important;
   -webkit-transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
   transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
 }
 
-div.teste {
+.Wrapper {
   border: 1px solid black;
   -webkit-transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
   transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
+  background-color: white;
+  z-index: 3;
+  position: relative;
+}
+.WrapperBackground {
+  background-color: #673ab7;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
