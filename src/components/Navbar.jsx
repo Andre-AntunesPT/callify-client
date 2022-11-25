@@ -1,14 +1,26 @@
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
+    <>
+      <input type="checkbox" id="navigation" />
+      <label for="navigation">+</label>
+      <nav>
         <Link to="/">
-        <button>Home</button>
-      </Link>
-    </nav>
-    
-  )
+          <button>Home</button>
+        </Link>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+      </nav>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;

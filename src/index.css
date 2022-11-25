@@ -1,13 +1,96 @@
-body {
+body,
+html {
+  height: 100%;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+.wrapper {
+  overflow: hidden;
+}
+section {
+  padding: 30px 30px 30px 80px;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  margin: 0 -250px 0 0;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav ul {
+  width: 250px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background: #222;
+  overflow: hidden;
+}
+nav li {
+  margin: 0;
+}
+nav a {
+  color: #fff;
+  font-size: 1em;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  text-decoration: none;
+  display: block;
+  padding: 12px 15px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #333;
+}
+nav a:hover {
+  background: #111;
+}
+label {
+  display: block;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  font-weight: 700;
+  background: #1ea1b8;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  line-height: 1.1em;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  -moz-transition: all 200ms ease-in;
+  -webkit-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  z-index: 500;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked ~ nav {
+  margin: 0;
+}
+input[type="checkbox"]:checked ~ label {
+  right: 260px;
+}
+input[type="checkbox"]:checked ~ div {
+  transform: scale(0.8) translateX(-25vw) translateZ(0) !important;
+  -webkit-transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
+  transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
+}
+
+div.teste {
+  border: 1px solid black;
+  -webkit-transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
+  transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
 }
