@@ -5,7 +5,7 @@ function Home() {
     <>
       <header tabindex="0">
         <img
-          src="/assets/images/logo-callify.png"
+          src="/assets/images/logo-callify_white.png"
           alt="Callify - Logo"
           className="logo-callify"
         />
