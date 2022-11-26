@@ -1,50 +1,77 @@
 import { Link } from "react-router-dom";
-import {useContext} from 'react';
-import {AuthContext} from '../contexts/auth.context';
+import { useContext } from "react";
+import { AuthContext } from "../contexts/auth.context";
 
 function Navbar() {
-  const {loggedIn, user, logout} = useContext(AuthContext);
+  const { loggedIn, user, logout } = useContext(AuthContext);
   return (
     <>
-      <input type="checkbox" id="navigation" />
+      <div id="nav-container">
+        <div className="bg"></div>
+        <div className="button" tabindex="0">
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+        </div>
+        <div id="nav-content" tabindex="0">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li className="small">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+      {/* <input type="checkbox" id="navigation" />
       <label for="navigation" id="navigation-label">
         +
-      </label>
-      <nav>
-        <Link to="/">
-          <button>Home</button>
-        </Link>
-        <Link to="/">
-          <button>Events</button>
-        </Link>
-        <Link to="/">
-          <button>Home</button>
-        </Link>
-        <Link to="/">
-          <button>Home</button>
-        </Link>
+      </label> */}
+      {/* <nav>
+        <Link to="/">Home</Link>
+        <Link to="/">Home</Link>
+        <Link to="/">Home</Link>
+        <Link to="/">Home</Link>
 
         {loggedIn && (
-        <> 
-        <Link to="/projects">
-        <button>Projects</button>
-        <button onClick={logout}>Logout</button>
-        <h3>hey there {user.email}</h3>
-      </Link> 
-      </>
-      )}
+          <>
+            <Link to="/projects">
+              <button>Projects</button>
+              <button onClick={logout}>Logout</button>
+              <h3>hey there {user.email}</h3>
+            </Link>
+          </>
+        )}
 
-      {!loggedIn && (
-        <>
-          <Link to='/signup'>
-          <button>Signup</button>
-          </Link>
-          <Link to='/login'>
-          <button>Login</button>
-          </Link>
-        </>
-      )}
-      </nav>
+        {!loggedIn && (
+          <>
+            <Link to="/signup">
+              <button>Signup</button>
+            </Link>
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+          </>
+        )}
+      </nav> */}
     </>
   );
 }

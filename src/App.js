@@ -8,7 +8,6 @@ import Signup from "./pages/Signup";
 import Anon from "./components/Anon";
 import Private from "./components/Private";
 
-
 function App() {
   return (
     <div className="App">
@@ -16,24 +15,23 @@ function App() {
       <div className="Wrapper">
         <Routes>
           <Route path="/" element={<Home />} />
-
-          <Route path="/signup" 
-        element={
-        <Anon>
-          <Signup/>
-        </Anon>} />
-        
-        
-        <Route path="/login" 
-        element={
-        <Anon>
-          <Login/>
-        </Anon>} />
-
-          
+          <Route
+            path="/signup"
+            element={
+              <Anon>
+                <Signup />
+              </Anon>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <Anon>
+                <Login />
+              </Anon>
+            }
+          />
         </Routes>
-
-        
       </div>
       <div className="WrapperBackground"></div>
     </div>

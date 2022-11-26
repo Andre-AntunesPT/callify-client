@@ -1,15 +1,14 @@
 /* start welcome animation */
 
-/* .welcome {
-  background: #512da8;
+.welcome {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
-} */
+}
 
 .welcome .splash {
   height: 0px;
   padding: 0px;
-  border: 130em solid #039be5;
+  border: 130em solid #512da8;
   position: fixed;
   left: 50%;
   top: 100%;
@@ -25,9 +24,9 @@
 }
 
 .welcome #welcome {
-  background: #311b92;
-  width: 56px;
-  height: 56px;
+  background-image: url("../public/assets/images/logo-callify_ball.png");
+  width: 60px;
+  height: 60px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -43,11 +42,10 @@
     hide 2s 2.9s ease forwards;
 }
 
-/* moveIn */
-.welcome header,
+header,
 .welcome a.btn {
   opacity: 0;
-  animation: moveIn 2s 3.1s ease forwards;
+  animation: moveIn 0.5s 2.9s ease forwards;
 }
 
 @keyframes init {
@@ -56,8 +54,8 @@
     height: 0px;
   }
   100% {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     margin-top: 0px;
     opacity: 1;
   }
@@ -99,7 +97,6 @@
 
 @keyframes moveUp {
   0% {
-    background: #311b92;
     top: 100%;
   }
   50% {
@@ -107,24 +104,23 @@
   }
   100% {
     top: 50%;
-    background: #039be5;
   }
 }
 
 @keyframes materia {
   0% {
-    background: #039be5;
+    background: #512da8;
   }
   50% {
-    background: #039be5;
-    top: 26px;
+    background: #512da8;
+    top: 35px;
   }
   100% {
-    background: #311b92;
+    background: #512da8;
     width: 100%;
-    height: 64px;
+    height: 70px;
     border-radius: 0px;
-    top: 26px;
+    top: 35px;
   }
 }
 
