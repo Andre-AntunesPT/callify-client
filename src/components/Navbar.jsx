@@ -8,7 +8,7 @@ function Navbar() {
     <>
       <div id="nav-container">
         <div className="bg"></div>
-        <div className="button" tabindex="0">
+        <div className="nav-button" tabindex="0">
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
@@ -19,24 +19,28 @@ function Navbar() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">Events</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/">My Rooms</Link>
             </li>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
+            {loggedIn && (
+              <li>
+                <Link to="/rooms" onClick={logout}>
+                  Logout
+                </Link>
+              </li>
+            )}
+            {!loggedIn && (
+              <li>
+                <Link to="/signup">Signup</Link>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
             <li className="small">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
+              <Link to="/">Home</Link>
+              <Link to="/">Home</Link>
+              {loggedIn && <Link to="/profile">Hey there {user.username}</Link>}
             </li>
           </ul>
         </div>
@@ -46,31 +50,6 @@ function Navbar() {
         +
       </label> */}
       {/* <nav>
-        <Link to="/">Home</Link>
-        <Link to="/">Home</Link>
-        <Link to="/">Profile</Link>
-        <Link to="/">Home</Link>
-
-        {loggedIn && (
-          <>
-            <Link to="/rooms">
-              <button>Rooms</button>
-              <button onClick={logout}>Logout</button>
-              <h3>hey there {user.username}</h3>
-            </Link>
-          </>
-        )}
-
-        {!loggedIn && (
-          <>
-            <Link to="/signup">
-              <button>Signup</button>
-            </Link>
-            <Link to="/login">
-              <button>Login</button>
-            </Link>
-          </>
-        )}
       </nav> */}
     </>
   );
