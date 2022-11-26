@@ -22,6 +22,8 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
-setTimeout(function () {
-  document.getElementById("splash-overlay").style.display = "none";
-}, 3000);
+window.onload = function () {
+  setTimeout(function () {
+    document.getElementById("welcome-overlay").style.display = "none";
+  }, 3000);
+};

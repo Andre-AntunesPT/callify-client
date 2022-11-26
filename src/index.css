@@ -112,10 +112,6 @@ main {
   visibility: visible;
 }
 
-#nav-container:focus-within .button {
-  pointer-events: none;
-}
-
 #nav-container:focus-within .icon-bar:nth-of-type(1) {
   transform: translate3d(0, 6px, 0) rotate(45deg);
 }
@@ -192,6 +188,10 @@ main {
   transform: scale(0.8) translateX(+25vw) translateZ(0) !important;
   -webkit-transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
   transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
+}
+
+#nav-container:focus-within a {
+  transform: none;
 }
 
 #nav-content ul {
