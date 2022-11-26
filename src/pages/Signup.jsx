@@ -18,7 +18,7 @@ function Signup(props) {
     const handleSignupSubmit = async(e) => {e.preventDefault();
     
     try {
-        await axios.post(`${process.env.REACT_APP_API_URL}/signup`, { email, password});
+        await axios.post(`${process.env.REACT_APP_API_URL}/signup`, { email, password, username});
        
         //redirect
         navigate('/login')
@@ -46,6 +46,11 @@ function Signup(props) {
         <input type="username" name="username" value={username} onChange={handleUsername} />
 
         <button type="submit">Sign Up</button>
+
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+
+    <p>Already have account?</p>
+    <Link to='/login'> Login</Link>
 
     </form>
     

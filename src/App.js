@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Anon from "./components/Anon";
+import Profile from "./pages/Profile";
 import Private from "./components/Private";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <div className="Wrapper">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
           <Route
             path="/signup"
             element={

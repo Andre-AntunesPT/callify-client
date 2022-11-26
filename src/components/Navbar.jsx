@@ -48,15 +48,15 @@ function Navbar() {
       {/* <nav>
         <Link to="/">Home</Link>
         <Link to="/">Home</Link>
-        <Link to="/">Home</Link>
+        <Link to="/">Profile</Link>
         <Link to="/">Home</Link>
 
         {loggedIn && (
           <>
-            <Link to="/projects">
-              <button>Projects</button>
+            <Link to="/rooms">
+              <button>Rooms</button>
               <button onClick={logout}>Logout</button>
-              <h3>hey there {user.email}</h3>
+              <h3>hey there {user.username}</h3>
             </Link>
           </>
         )}
