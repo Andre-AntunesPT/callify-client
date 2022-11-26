@@ -22,7 +22,7 @@ function Navbar() {
               <Link to="/events">Events</Link>
             </li>
             <li>
-              <Link to="/">My Rooms</Link>
+              <Link to="/rooms">My Rooms</Link>
             </li>
             {loggedIn && (
               <li>

@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
+
+  const { id } = useParams();
+
+  const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
 
@@ -24,8 +29,9 @@ function CreateRoom(props) {
       /* Clear the inputs */
       setUserRoomName("");
 
-      /* Refresh the list - we have passed this method to the component AddProject on ProjectDetails */
-      props.refreshProjects();
+      /* redirect */
+
+      navigate(`/rooms/${id}`);
     } catch (error) {
       console.log(error);
     }

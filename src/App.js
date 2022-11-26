@@ -7,7 +7,9 @@ import Header from "./components/Header";
 
 import Home from "./pages/Home";
 import Events from "./pages/Events";
+import Rooms from "./pages/Rooms";
 import EventDetails from "./pages/EventDetails";
+import RoomDetails from "./pages/RoomDetails";
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -24,7 +26,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/rooms" element={<Rooms />} />
           <Route path="/events/:id" element={<EventDetails />} />
+          <Route path="/rooms/:id" element={<RoomDetails />} />
           <Route path="/profile" element={<Profile />} />
           <Route
             path="/signup"

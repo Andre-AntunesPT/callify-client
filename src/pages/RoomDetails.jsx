@@ -1,26 +1,25 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import CreateRoom from "../components/CreateRoom";
 
-function EventDetails() {
+function RoomDetails() {
   /* Apesar de ser um objecto coloca-se null senão vai ler como undefined */
-  const [event, setEvent] = useState(null);
+  const [room, setRoom] = useState(null);
 
   const { id } = useParams();
 
-  const getEvents = async () => {
+  const getRooms = async () => {
     try {
       /* process.env.REACT_APP_API_URL is referring to localhost 5005 locally but will be the deployed URL in the future */
       const storedToken = localStorage.getItem("authToken");
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/events/${id}`,
+        `${process.env.REACT_APP_API_URL}/rooms/${id}`,
         {
           headers: { Authorization: `Bearer ${storedToken}` },
         }
       );
 
-      setEvent(response.data);
+      setRoom(response.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -29,18 +28,23 @@ function EventDetails() {
 
   /* We need to call the function in a specific moment */
   useEffect(() => {
-    getEvents();
+    getRooms();
     /* If we were able to go from one details view straight to another we should pass id on the dependency array below, so that everytime the component rerenders we get the information from the correct/latest id */
   }, []);
 
   return (
-    <div className="EventDetails">
-      {event && (
+    <div className="RoomDetails">
+      {room && (
         /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content) */
         <>
-          <CreateRoom refreshProjects={getEvents} />
-          <h1>{event.title}</h1>
-          <p>{event.description}</p>
+          <h1>{room.userRoomName}</h1>
+          <p>{room.roomUrl}</p>
+          <iframe
+            src={room.roomUrl}
+            allow="camera; microphone; fullscreen; speaker; display-capture"
+            className="iframe-teste"
+            title="iframe"
+          ></iframe>
         </>
       )}
 
@@ -54,4 +58,4 @@ function EventDetails() {
   );
 }
 
-export default EventDetails;
+export default RoomDetails;
