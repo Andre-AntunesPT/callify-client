@@ -23,6 +23,7 @@ root.render(
 reportWebVitals();
 
 window.onload = function () {
+  /* document.getElementById("HeaderLogo").style.display = "none"; */
   setTimeout(function () {
     document.getElementById("welcome-overlay").style.display = "none";
   }, 3000);

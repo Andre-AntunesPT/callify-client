@@ -191,7 +191,7 @@ main {
 }
 
 #nav-container:focus-within a {
-  transform: none;
+  transform: initial;
 }
 
 #nav-content ul {

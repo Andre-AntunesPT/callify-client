@@ -16,10 +16,10 @@ function Navbar() {
         <div id="nav-content" tabindex="0">
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <a href="/">Home</a>
             </li>
             <li>
-              <Link to="/events">Events</Link>
+              <a href="/events">Events</a>
             </li>
             <li>
               <Link to="/rooms">My Rooms</Link>
