@@ -239,3 +239,34 @@ main {
   height: 700px;
   width: 90%;
 }
+/* 
+#nav-content ul > li {
+  position: relative;
+}
+#nav-content ul > li:after,
+#nav-content ul > li:before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 2px;
+  left: 0;
+  pointer-events: none;
+}
+#nav-content ul > li:after {
+  background-color: #000;
+}
+#nav-content ul > li:after {
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: transform 0.5s cubic-bezier(0.3, 0.4, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.3, 0.4, 0.1, 1);
+  transform-origin: left;
+}
+#nav-content:hover ul > li:after {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+ */
