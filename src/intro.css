@@ -42,7 +42,7 @@
     hide 2s 2.9s ease forwards;
 }
 
-header,
+header.home-animation,
 .welcome a.btn {
   opacity: 0;
   animation: moveIn 0.5s 2.9s ease forwards;

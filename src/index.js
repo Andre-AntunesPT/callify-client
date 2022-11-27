@@ -23,7 +23,11 @@ root.render(
 reportWebVitals();
 
 window.onload = function () {
-  /* document.getElementById("HeaderLogo").style.display = "none"; */
+  const welcomeOverlay = document.getElementById("welcome-overlay");
+  if (welcomeOverlay) {
+    const headerLogo = document.getElementById("HeaderLogo");
+    headerLogo.classList.add("home-animation");
+  }
   setTimeout(function () {
     document.getElementById("welcome-overlay").style.display = "none";
   }, 3000);
