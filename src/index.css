@@ -7,7 +7,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -39,8 +39,9 @@ header {
   align-items: center;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   z-index: 2;
-  background: #512da8;
+  background: rgba(56, 28, 124, 0.9);
   top: 0;
+  transition: top 0.2s ease-in-out;
 }
 
 main {
@@ -128,7 +129,7 @@ main {
   margin-top: 70px;
   padding: 20px;
   width: 90%;
-  max-width: 300px;
+  max-width: 30vw;
   position: absolute;
   top: 0;
   left: 0;
@@ -154,7 +155,19 @@ main {
   text-transform: uppercase;
   transition: color 0.1s;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 35px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #nav-content li a {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #nav-content li a {
+    font-size: 12px;
+  }
 }
 
 #nav-content li a:hover {
