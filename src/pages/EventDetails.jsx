@@ -6,6 +6,7 @@ import CreateRoom from "../components/CreateRoom";
 function EventDetails() {
   /* Apesar de ser um objecto coloca-se null senão vai ler como undefined */
   const [event, setEvent] = useState(null);
+  //const [rooms, setRoom] = useState(null);
 
   const { id } = useParams();
 
@@ -21,7 +22,8 @@ function EventDetails() {
       );
 
       setEvent(response.data);
-      console.log(response.data);
+      //setRoom(response.data);
+      console.log(response.data.rooms);
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +38,7 @@ function EventDetails() {
   return (
     <div className="EventDetails">
       {event && (
-        /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content) */
+        /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
         <>
           <CreateRoom refreshProjects={getEvents} />
           <h1>{event.title}</h1>
@@ -44,12 +46,14 @@ function EventDetails() {
         </>
       )}
 
-      {/* {event &&
-        event.rooms.map((room) => (
-          <li key={room._id} className="RoomCard card">
-            <h3>{room.userRoomName}</h3>
-          </li>
-        ))} */}
+      {event &&
+        event.rooms.map((room) => {
+          return (
+            <li key={room._id} className="RoomCard card">
+              <h3>{room.userRoomName}</h3>
+            </li>
+          );
+        })}
     </div>
   );
 }
