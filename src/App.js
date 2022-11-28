@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Anon from "./components/Anon";
 import Profile from "./pages/Profile";
+import UpdateProfile from "./pages/UpdateProfile";
 import Private from "./components/Private";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/events/:id" element={<EventDetails />} />
           <Route path="/rooms/:id" element={<RoomDetails />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path='/profile/edit/:id' element={<UpdateProfile/>} />
           <Route
             path="/signup"
             element={
