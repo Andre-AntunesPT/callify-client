@@ -11,6 +11,7 @@ import Rooms from "./pages/Rooms";
 import EventDetails from "./pages/EventDetails";
 import RoomDetails from "./pages/RoomDetails";
 import Spinner from "./components/Spinner";
+import CreateRoom from "./components/CreateRoom";
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -33,6 +34,7 @@ function App() {
     return (
       <div className="App">
         <Navbar />
+
         <div className="Wrapper" id="WrapperCallify">
           <Header />
           <Routes>

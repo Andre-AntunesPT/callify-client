@@ -38,7 +38,7 @@ function Navbar() {
               </li>
             )}
             <li className="small">
-              <Link to="/">Home</Link>
+              <Link to="/rooms/:id">details</Link>
               <Link to="/">Home</Link>
               {loggedIn && <Link to="/profile">Hey there {user.username}</Link>}
             </li>

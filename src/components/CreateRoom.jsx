@@ -42,7 +42,7 @@ function CreateRoom(props) {
     <div className="CreateRoom">
       <h3>CreateRoom</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="userRoomName">Title</label>
+        <label htmlFor="userRoomName"></label>
         <input
           type="text"
           name="userRoomName"

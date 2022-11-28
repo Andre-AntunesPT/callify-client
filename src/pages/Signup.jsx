@@ -48,13 +48,13 @@ function Signup(props) {
         <input type="username" name="username" value={username} onChange={handleUsername} />
 
         <label>Company</label>
-        <input type='text' name='company' value={company} onChange={handleUsername} />
+        <input type='text' name='company' value={company} onChange={handleCompany} />
 
         <button type="submit">Sign Up</button>
 
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-    <p>Already have account?</p>
+    <p>Already have an account?</p>
     <Link to='/login'> Login</Link>
 
     </form>
