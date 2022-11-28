@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import CreateRoom from "../components/CreateRoom";
 
 import Flipbox from "../components/Flipbox";
 
@@ -27,13 +28,14 @@ function Events() {
     }
   };
 
-  /* We need to call the function in a specific moment */
   useEffect(() => {
     getEvents();
   }, []);
 
   return (
     <div className="EventsListPage">
+
+    <CreateRoom refreshRoom={getEvents}/>
       <Flipbox />
       <h1>List of Events</h1>
       {events.map((event) => {
