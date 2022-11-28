@@ -57,5 +57,4 @@ function RoomDetails() {
     </div>
   );
 }
-
 export default RoomDetails;

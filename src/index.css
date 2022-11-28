@@ -27,7 +27,7 @@ a:link {
   outline: 0;
 }
 
-/* CSS */
+/* Button */
 .button-87 {
   margin: 10px;
   padding: 15px 30px;
@@ -276,6 +276,57 @@ main {
   top: 0;
 }
 
+.Spinner {
+  position: absolute;
+  top: 0;
+  background-color: #673ab7;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.Spinner img {
+  max-width: 100px;
+  max-height: 100px;
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+
 /* HERO */
 
 .hero-image {
@@ -343,6 +394,30 @@ main {
 
 svg {
   margin-top: -75vh;
+}
+
+/* Milestone */
+
+.stat {
+  margin: 150px auto;
+  text-align: center;
+}
+.highlight {
+  color: #111;
+  padding: 20px 0;
+  font-weight: bold;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0;
+  font-size: 48px;
+}
+.stat i {
+  color: #f7c221;
+}
+.milestone-details {
+  font-weight: bold;
+  font-size: 18px;
+  color: #999;
 }
 
 /* TESTES */

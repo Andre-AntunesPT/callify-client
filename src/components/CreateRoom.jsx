@@ -5,7 +5,7 @@ import axios from "axios";
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
 
-  const { eventId } = useParams();
+  const { id } = useParams();
 
   const navigate = useNavigate();
 
@@ -16,10 +16,11 @@ function CreateRoom(props) {
     try {
       /* process.env.REACT_APP_API_URL is referring to localhost 5005 locally but will be the deployed URL in the future */
       const storedToken = localStorage.getItem("authToken");
-      await axios.post(
+      const createdRoom = await axios.post(
         `${process.env.REACT_APP_API_URL}/rooms`,
         {
           userRoomName,
+          eventId: id,
         },
         {
           headers: { Authorization: `Bearer ${storedToken}` },
@@ -31,7 +32,7 @@ function CreateRoom(props) {
 
       /* redirect */
 
-      navigate(`/rooms/${eventId}`);
+      navigate(`/rooms/${createdRoom._id}`);
     } catch (error) {
       console.log(error);
     }
@@ -48,12 +49,6 @@ function CreateRoom(props) {
           value={userRoomName}
           onChange={handleUserRoomName}
         />
-        {/* <input
-          type="text"
-          name="eventId"
-          value={eventId}
-          placeholder={eventId}
-        /> */}
 
         <button type="submit">Create Room</button>
       </form>
