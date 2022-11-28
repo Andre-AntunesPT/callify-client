@@ -40,7 +40,6 @@ function Events() {
       <div className="teste">
         <Hero h1="ewfjknwef" />
       </div>
-      <CreateRoom refreshRoom={getEvents} />
       <Flipbox />
 
       <CountUp className="Count" end={numberCounter} />
