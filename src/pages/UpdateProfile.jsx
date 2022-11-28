@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Link, useNavigate, useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import axios from 'axios';
 
 function UpdateProfile() {
@@ -46,10 +46,10 @@ function UpdateProfile() {
     
     <form onSubmit={handleSubmit}>
             <label htmlFor='username'>Username</label>
-            <input type='username' name='username' value={username}  onChange={handleUsername}/>
+            <input type='text' name='username' value={username}  onChange={handleUsername}/>
 
             <label htmlFor='imageUrl'>Profile Photo</label>
-            <input type='imageUrl' name='imageUrl' value={imageUrl}  onChange={handleImageUrl}/>
+            <input type='file' name='imageUrl' value={imageUrl}  onChange={handleImageUrl}/>
 
             <button type='submit'>Edit Profile</button>
         </form>

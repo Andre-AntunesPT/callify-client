@@ -15,6 +15,7 @@ function Login(props) {
     const handleEmail = (e) => setEmail(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
     const handleUsername = (e) => setUsername(e.target.value);
+    
   
     const handleLoginSubmit = async(e) => {e.preventDefault();
         
@@ -48,7 +49,7 @@ function Login(props) {
         <input type="password" name="password" value={password} onChange={handlePassword} />
 
         <label>Username</label>
-        <input type='username' name='username' value={username} onChange={handleUsername} />
+        <input type='text' name='username' value={username} onChange={handleUsername} />
 
         <button type='submit'>Login</button>
         </form>

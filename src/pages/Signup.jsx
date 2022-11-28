@@ -6,6 +6,7 @@ function Signup(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [company, setCompany] = useState('');
     const [errorMessage, setErrorMessage] = useState(undefined);
 
     const navigate = useNavigate();
@@ -14,11 +15,12 @@ function Signup(props) {
     const handleEmail = (e) => setEmail(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
     const handleUsername = (e) => setUsername(e.target.value);
+    const handleCompany = (e) => setCompany(e.target.value);
   
     const handleSignupSubmit = async(e) => {e.preventDefault();
     
     try {
-        await axios.post(`${process.env.REACT_APP_API_URL}/signup`, { email, password, username});
+        await axios.post(`${process.env.REACT_APP_API_URL}/signup`, { email, password, username, company});
        
         //redirect
         navigate('/login')
@@ -44,6 +46,9 @@ function Signup(props) {
 
         <label>Username:</label>
         <input type="username" name="username" value={username} onChange={handleUsername} />
+
+        <label>Company</label>
+        <input type='text' name='company' value={company} onChange={handleUsername} />
 
         <button type="submit">Sign Up</button>
 
