@@ -42,7 +42,7 @@ function CreateRoom(props) {
     <div className="CreateRoom">
       <h3>CreateRoom</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="userRoomName"></label>
+        <label htmlFor="userRoomName">Room</label>
         <input
           type="text"
           name="userRoomName"
@@ -50,7 +50,7 @@ function CreateRoom(props) {
           onChange={handleUserRoomName}
         />
 
-        <button type="submit">Create Room</button>
+        <button type="submit">Create Room</button> 
       </form>
     </div>
   );
