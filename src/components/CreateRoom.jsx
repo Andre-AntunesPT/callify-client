@@ -5,7 +5,7 @@ import axios from "axios";
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
 
-  const { id } = useParams();
+  const { eventId } = useParams();
 
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ function CreateRoom(props) {
 
       /* redirect */
 
-      navigate(`/rooms/${id}`);
+      navigate(`/rooms/${eventId}`);
     } catch (error) {
       console.log(error);
     }
@@ -48,6 +48,12 @@ function CreateRoom(props) {
           value={userRoomName}
           onChange={handleUserRoomName}
         />
+        {/* <input
+          type="text"
+          name="eventId"
+          value={eventId}
+          placeholder={eventId}
+        /> */}
 
         <button type="submit">Create Room</button>
       </form>

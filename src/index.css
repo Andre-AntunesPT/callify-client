@@ -259,7 +259,11 @@ main {
   z-index: 1;
   position: relative;
   min-height: 100vh;
-  /*padding: 100px 0 0;*/
+  padding: 100px 0 0;
+}
+
+.home-padding {
+  padding: 0;
 }
 
 .WrapperBackground {
