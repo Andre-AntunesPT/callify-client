@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import "./intro.css";
+import "./flipbox.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -33,3 +34,23 @@ window.onload = function () {
     document.getElementById("welcome-overlay").style.display = "none";
   }, 3000);
 };
+
+document.ready(function ($) {
+  //Count nr. of square classes
+  const countSquare = $(".square").length;
+
+  //For each Square found add BG image
+  // eslint-disable-next-line no-undef
+  for (i = 0; i < countSquare; i++) {
+    // eslint-disable-next-line no-undef
+    const firstImage = document.getElementsByClassName(".square").eq([i]);
+    // eslint-disable-next-line no-undef
+    const secondImage = document.getElementsByClassName(".square2").eq([i]);
+
+    const getImage = firstImage.attr("data-image");
+    const getImage2 = secondImage.attr("data-image");
+
+    firstImage.css("background-image", "url(" + getImage + ")");
+    secondImage.css("background-image", "url(" + getImage2 + ")");
+  }
+});
