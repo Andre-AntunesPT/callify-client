@@ -2,18 +2,18 @@
 
 /* General */
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body,
 html {
   height: 100%;
   padding: 0;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 /* Elements */
@@ -25,6 +25,43 @@ a:active,
 a:link {
   text-decoration: none;
   outline: 0;
+}
+
+/* CSS */
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(
+    45deg,
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
+  );
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
 }
 
 /* Header */
@@ -48,6 +85,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 100%;
+  z-index: 0;
 }
 
 /* NAV */
@@ -221,7 +259,7 @@ main {
   z-index: 1;
   position: relative;
   min-height: 100vh;
-  padding: 100px 0 0;
+  /*padding: 100px 0 0;*/
 }
 
 .WrapperBackground {
@@ -232,6 +270,75 @@ main {
   position: fixed;
   left: 0;
   top: 0;
+}
+
+/* HERO */
+
+.hero-image {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/assets/images/home-bg.jpeg");
+  min-height: 100vh;
+}
+
+.hero-my-restaurants .hero-text {
+  top: 15vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-home .hero-text {
+  top: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+}
+
+.hero-text p {
+  font-size: 18px;
+}
+
+.nectar-shape-divider {
+  width: 100%;
+  left: 0;
+  bottom: -1px;
+  height: 100%;
+  position: absolute;
+}
+.nectar-shape-divider-wrap[data-style="curve_opacity"] svg path:nth-child(1),
+.nectar-shape-divider-wrap[data-style="waves_opacity_alt"]
+  svg
+  path:nth-child(1) {
+  opacity: 0.15;
+}
+.nectar-shape-divider-wrap[data-style="curve_opacity"] svg path:nth-child(2),
+.nectar-shape-divider-wrap[data-style="waves_opacity_alt"]
+  svg
+  path:nth-child(2) {
+  opacity: 0.3;
+}
+
+svg {
+  margin-top: -75vh;
 }
 
 /* TESTES */

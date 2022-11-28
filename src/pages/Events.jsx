@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import Flipbox from "../components/Flipbox";
+
 function Events() {
   /* declare the state */
   const [events, setEvents] = useState([]);
@@ -32,6 +34,7 @@ function Events() {
 
   return (
     <div className="EventsListPage">
+      <Flipbox />
       <h1>List of Events</h1>
       {events.map((event) => {
         return (
