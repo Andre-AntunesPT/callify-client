@@ -15,6 +15,4 @@ const uploadImage = (file) => {
   };
 
 
-export default {
-    uploadImage
-}
+export default uploadImage;
