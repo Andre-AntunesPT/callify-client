@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import CreateRoom from "../components/CreateRoom";
 
+import Hero from "../components/Hero";
 import Flipbox from "../components/Flipbox";
+import CountUp from "react-countup";
 
 function Events() {
   /* declare the state */
@@ -32,11 +34,17 @@ function Events() {
     getEvents();
   }, []);
 
+  const numberCounter = 100;
+
   return (
     <div className="EventsListPage">
-
-    <CreateRoom refreshRoom={getEvents}/>
+      <div className="teste">
+        <Hero h1="ewfjknwef" />
+      </div>
+      <CreateRoom refreshRoom={getEvents} />
       <Flipbox />
+
+      <CountUp className="Count" end={numberCounter} />
       <h1>List of Events</h1>
       {events.map((event) => {
         return (

@@ -334,9 +334,10 @@ main {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: -100px;
 }
 
-.hero-home {
+.teste .hero-home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../public/assets/images/home-bg.jpeg");
   min-height: 100vh;
@@ -398,26 +399,19 @@ svg {
 
 /* Milestone */
 
-.stat {
-  margin: 150px auto;
-  text-align: center;
-}
-.highlight {
-  color: #111;
-  padding: 20px 0;
-  font-weight: bold;
-  display: block;
-  overflow: hidden;
-  margin-bottom: 0;
-  font-size: 48px;
-}
-.stat i {
-  color: #f7c221;
-}
-.milestone-details {
-  font-weight: bold;
-  font-size: 18px;
-  color: #999;
+.Count {
+  padding: 2rem;
+  margin: 1rem;
+
+  border-radius: 2em;
+  box-shadow: 1px 2px 2px #0d3b66;
+  background-color: #faf0ca;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #0d3b66;
 }
 
 /* TESTES */
