@@ -45,7 +45,7 @@ function Events() {
       <Flipbox id="FlipboxEvents" />
       <div className="CountSection">
         <p className="CountParagraph">
-          <CountUp className="Count" end={numberCounter} duration={2} />
+          <CountUp className="Count" end={numberCounter} duration={3} />
           <sup>+</sup>
         </p>
         <p>Rooms already created</p>
