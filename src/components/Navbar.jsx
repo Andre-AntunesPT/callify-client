@@ -21,9 +21,7 @@ function Navbar() {
             <li>
               <a href="/events">Events</a>
             </li>
-            <li>
-              <Link to="/rooms">My Rooms</Link>
-            </li>
+            <li>{loggedIn && <Link to="/rooms">My Rooms</Link>}</li>
             {loggedIn && (
               <li>
                 <Link to="/rooms" onClick={logout}>

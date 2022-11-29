@@ -4,14 +4,12 @@ import axios from "axios";
 
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
-  
 
   const { id } = useParams();
 
   const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +29,7 @@ function CreateRoom(props) {
 
       /* Clear the inputs */
       setUserRoomName("");
-     
+
       /* redirect */
 
       navigate(`/rooms/${createdRoom._id}`);
@@ -52,10 +50,8 @@ function CreateRoom(props) {
           onChange={handleUserRoomName}
         />
 
-        <button type="submit">Create Room</button> 
+        <button type="submit">Create Room</button>
       </form>
-     
-      
     </div>
   );
 }
