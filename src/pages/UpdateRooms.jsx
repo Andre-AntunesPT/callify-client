@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../contexts/auth.context";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
 function UpdateRooms() {
   const [userRoomName, setUserRoomName] = useState("");
   const [palette, setPalette] = useState("");
+  const [eventId, setEventId] = useState("");
 
   const { id } = useParams();
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
@@ -21,6 +24,7 @@ function UpdateRooms() {
       //response.data = {title, description}
       setUserRoomName(response.data.userRoomName);
       setPalette(response.data.palette);
+      setEventId(response.data.event);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -52,7 +56,9 @@ function UpdateRooms() {
 
   const deleteRoom = async () => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/rooms/${id}`);
+      await axios.delete(
+        `${process.env.REACT_APP_API_URL}/rooms/${id}/${user._id}/${eventId}`
+      );
       //after we delete we redirect back to the room list
       navigate("/rooms");
     } catch (error) {

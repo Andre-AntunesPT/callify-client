@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../contexts/auth.context";
 import axios from "axios";
 
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
 
   const { id } = useParams();
+
+  const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -21,6 +24,7 @@ function CreateRoom(props) {
         {
           userRoomName,
           eventId: id,
+          userId: user._id,
         },
         {
           headers: { Authorization: `Bearer ${storedToken}` },
@@ -31,8 +35,7 @@ function CreateRoom(props) {
       setUserRoomName("");
 
       /* redirect */
-
-      navigate(`/rooms/${createdRoom._id}`);
+      navigate(`/rooms/${createdRoom.data._id}`);
     } catch (error) {
       console.log(error);
     }
