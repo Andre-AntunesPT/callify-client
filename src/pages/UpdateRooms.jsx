@@ -4,11 +4,13 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function UpdateRooms() {
   const [userRoomName, setUserRoomName] = useState("");
+  const [palette, setPalette] = useState("");
 
   const { id } = useParams();
   const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
+  const handlePalette = (e) => setPalette(e.target.value);
 
   const getRoom = async () => {
     try {
@@ -17,7 +19,8 @@ function UpdateRooms() {
       );
 
       //response.data = {title, description}
-      setUserRoomName(response.data.title);
+      setUserRoomName(response.data.userRoomName);
+      setPalette(response.data.palette);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -33,10 +36,12 @@ function UpdateRooms() {
     try {
       await axios.put(`${process.env.REACT_APP_API_URL}/rooms/${id}`, {
         userRoomName,
+        palette,
       });
 
       //clear the inputs
       setUserRoomName("");
+      setPalette("");
 
       //redirect to the details view
       navigate(`/rooms/${id}`);
@@ -65,6 +70,13 @@ function UpdateRooms() {
           name="userRoomName"
           value={userRoomName}
           onChange={handleUserRoomName}
+        />
+        <label htmlFor="palette">Palette</label>
+        <input
+          type="text"
+          name="palette"
+          value={palette}
+          onChange={handlePalette}
         />
 
         <button type="submit">Edit Room</button>
