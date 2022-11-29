@@ -9,7 +9,7 @@ function Home() {
         <span id="splash-overlay" className="splash"></span>
         <span id="welcome" className="z-depth-4"></span>
       </div>
-      <div className="teste">
+      <div className="HomePage">
         <Hero />
       </div>
     </>

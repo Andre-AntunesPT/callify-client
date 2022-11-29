@@ -39,8 +39,8 @@ function Events() {
 
   return (
     <div className="EventsListPage">
-      <div className="teste">
-        <Hero h1="ewfjknwef" />
+      <div className="EventsPage">
+        <Hero />
       </div>
       <Flipbox id="FlipboxEvents" />
       <div className="CountSection">

@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import CreateRoom from "../components/CreateRoom";
+import ImageComparison from "../components/ImageComparison";
+
+import Hero from "../components/Hero";
 
 function EventDetails() {
   /* Apesar de ser um objecto coloca-se null senão vai ler como undefined */
@@ -37,6 +40,9 @@ function EventDetails() {
 
   return (
     <div className="EventDetails">
+      <div className="SingleEventPage">
+        <Hero />
+      </div>
       {event && (
         /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
         <>
@@ -45,15 +51,7 @@ function EventDetails() {
           <p>{event.description}</p>
         </>
       )}
-
-      {event &&
-        event.rooms.map((room) => {
-          return (
-            <li key={room._id} className="RoomCard card">
-              <h3>{room.userRoomName}</h3>
-            </li>
-          );
-        })}
+      <ImageComparison />
     </div>
   );
 }

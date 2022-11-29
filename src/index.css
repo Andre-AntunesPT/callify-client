@@ -383,26 +383,6 @@ main {
   margin-top: -100px;
 }
 
-.teste .hero-home {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/images/home-bg.jpeg");
-  min-height: 100vh;
-}
-
-.hero-my-restaurants .hero-text {
-  top: 15vh;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-.hero-home .hero-text {
-  top: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .hero-text {
   text-align: center;
   position: absolute;
@@ -418,6 +398,53 @@ main {
 .hero-text p {
   font-size: 18px;
 }
+
+/* Home HERO */
+
+.HomePage .hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/assets/images/home-bg.jpeg");
+  min-height: 100vh;
+}
+
+.HomePage .hero-image .hero-text {
+  top: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Events HERO */
+
+.EventsPage .hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/assets/images/home-bg.jpeg");
+  min-height: 80vh;
+}
+
+.EventsPage .hero-image .hero-text {
+  top: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Single Event HERO */
+
+.SingleEventPage .hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/assets/images/home-bg.jpeg");
+  min-height: 80vh;
+}
+
+.SingleEventPage .hero-image .hero-text {
+  top: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Shape Divider */
 
 .nectar-shape-divider {
   width: 100%;
@@ -566,6 +593,37 @@ svg {
     -webkit-transform: translateY(-250px);
     transform: translateY(-250px);
   }
+}
+
+/* Image Comparison */
+
+.img-comp-container {
+  position: relative;
+  height: 200px; /*should be the same height as the images*/
+}
+
+.img-comp-img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.img-comp-img img {
+  display: block;
+  vertical-align: middle;
+}
+
+.img-comp-slider {
+  position: absolute;
+  z-index: 9;
+  cursor: ew-resize;
+  /*set the appearance of the slider:*/
+  width: 40px;
+  height: 40px;
+  background-color: #2196f3;
+  opacity: 0.7;
+  border-radius: 50%;
 }
 
 /* TESTES */
