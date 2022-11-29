@@ -13,7 +13,6 @@ function CreateRoom(props) {
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
   const handleRoomColor = (e) => setRoomColor(e.target.value);
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +34,7 @@ function CreateRoom(props) {
       /* Clear the inputs */
       setUserRoomName("");
       setRoomColor("")
-     
+
       /* redirect */
 
       navigate(`/rooms/${createdRoom._id}`);
@@ -64,10 +63,8 @@ function CreateRoom(props) {
             );
           })}
       </select>
-        <button type="submit">Create Room</button> 
+        <button type="submit">Create Room</button>
       </form>
-     
-      
     </div>
   );
 }
