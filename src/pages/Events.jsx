@@ -41,8 +41,6 @@ function Events() {
         <Hero h1="ewfjknwef" />
       </div>
       <Flipbox />
-
-      <CountUp className="Count" end={numberCounter} />
       <h1>List of Events</h1>
       {events.map((event) => {
         return (
@@ -54,6 +52,10 @@ function Events() {
           </div>
         );
       })}
+      <div className="CountSection">
+        <CountUp className="Count" end={numberCounter} duration={3} />
+        <p>Rooms already created</p>
+      </div>
     </div>
   );
 }
