@@ -46,12 +46,12 @@ function EventDetails() {
       {event && (
         /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
         <>
-          <CreateRoom refreshProjects={getEvents} />
           <h1>{event.title}</h1>
           <p>{event.description}</p>
+          <CreateRoom refreshProjects={getEvents} />
         </>
       )}
-      <ImageComparison />
+      {/* <ImageComparison /> */}
     </div>
   );
 }
