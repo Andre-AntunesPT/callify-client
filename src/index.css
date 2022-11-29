@@ -67,7 +67,7 @@ a:link {
 .button-89 {
   --b: 3px; /* border thickness */
   --s: 0.45em; /* size of the corner */
-  --color: #ff9800;
+  --color: #f1a43a;
 
   padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
   color: var(--color);
@@ -281,6 +281,8 @@ main {
   transform: scale(0.8) translateX(+25vw) translateZ(0) !important;
   -webkit-transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
   transition: transform 0.8s cubic-bezier(0.15, 0.2, 0.1, 1);
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 #nav-container:focus-within a {
@@ -302,6 +304,8 @@ main {
   position: relative;
   min-height: 100vh;
   padding: 100px 0 0;
+  max-height: 100vh;
+  overflow: auto;
 }
 
 .home-padding {
@@ -453,12 +457,115 @@ svg {
   font-size: 20px;
 }
 
-.Count {
+.CountParagraph {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
+}
+
+.CountParagraph sup {
+  font-size: 50px;
+}
+
+.Count {
   color: #ffffff;
   font-size: 125px;
+}
+
+/* CTASection */
+
+.CTASection {
+  background-color: #361b72;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/assets/images/home-bg.jpeg");
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10vh;
+  text-align: center;
+  margin: 0 auto;
+}
+.CTASection h1 {
+  color: #ffffff;
+  padding: 25px 0;
+  font-size: 50px;
+}
+
+/* Team Member */
+
+.TeamMember {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.TeamMember .container {
+  position: relative;
+  width: 50%;
+  max-width: 400px;
+  padding: 5vw;
+}
+
+.TeamMember .image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  border-radius: 50%;
+}
+
+.TeamMember .middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.TeamMember .container:hover .image {
+  opacity: 0.3;
+}
+
+.TeamMember .container:hover .middle {
+  opacity: 1;
+}
+
+.TeamMember .text {
+  background-color: #04aa6d;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-25px);
+    transform: translateY(-25px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-250px);
+    transform: translateY(-250px);
+  }
 }
 
 /* TESTES */

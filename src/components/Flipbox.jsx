@@ -1,86 +1,60 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Flipbox() {
+  /* declare the state */
+  const [events, setEvents] = useState([]);
+
+  /* function to call the API */
+  const getEvents = async () => {
+    try {
+      /* process.env.REACT_APP_API_URL is referring to localhost 5005 locally but will be the deployed URL in the future */
+      const storedToken = localStorage.getItem("authToken");
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/events`,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
+      );
+
+      setEvents(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, []);
+
   return (
     <>
       <div className="centerflipcards">
-        <div class="square-flip">
-          <div className="square">
-            <div className="square-container">
-              <h2 className="textshadow">Webinar</h2>
-              <h3 className="textshadow">
-                Create rooms to host reliable webinars for better engagement.
-              </h3>
+        {events.map((event) => {
+          return (
+            <div class="square-flip">
+              <div className="square">
+                <div className="square-container">
+                  <h2 className="textshadow">{event.title}</h2>
+                  <h3 className="textshadow">{event.description}</h3>
+                </div>
+                <div className="flip-overlay"></div>
+              </div>
+              <div className="square2">
+                <div className="square-container2">
+                  <div className="align-center"></div>
+                  <h2>Create {event.title}</h2>
+                  <Link to={`/events/${event._id}`}>
+                    <button className="button-89">Create a Room</button>
+                  </Link>
+                </div>
+                <div className="flip-overlay"></div>
+              </div>
             </div>
-            <div className="flip-overlay"></div>
-          </div>
-          <div className="square2">
-            <div className="square-container2">
-              <div className="align-center"></div>
-              <h2>Create Webinar</h2>
-              <button className="button-89">Create a Room</button>
-            </div>
-            <div className="flip-overlay"></div>
-          </div>
-        </div>
-        <div class="square-flip">
-          <div className="square">
-            <div className="square-container">
-              <h2 className="textshadow">E-Learning</h2>
-              <h3 className="textshadow">
-                Personalized room made for your needs.
-              </h3>
-            </div>
-            <div className="flip-overlay"></div>
-          </div>
-          <div className="square2">
-            <div className="square-container2">
-              <div className="align-center"></div>
-              <h2>Create E-Learning</h2>
-              <button className="button-89">Create a Room</button>
-            </div>
-            <div className="flip-overlay"></div>
-          </div>
-        </div>
-        <div class="square-flip">
-          <div className="square">
-            <div className="square-container">
-              <h2 className="textshadow">Team Meeting</h2>
-              <h3 className="textshadow">
-                Meetings made simple so you can be more productive.
-              </h3>
-            </div>
-            <div className="flip-overlay"></div>
-          </div>
-          <div className="square2">
-            <div className="square-container2">
-              <div className="align-center"></div>
-              <h2>Create Meeting Room</h2>
-              <button className="button-89">Create a Room</button>
-            </div>
-            <div className="flip-overlay"></div>
-          </div>
-        </div>
-        <div class="square-flip">
-          <div className="square">
-            <div className="square-container">
-              <h2 className="textshadow">Telehealth</h2>
-              <h3 className="textshadow">
-                Rooms with a unique settings to connect health professionals and
-                patients.
-              </h3>
-            </div>
-            <div className="flip-overlay"></div>
-          </div>
-          <div className="square2">
-            <div className="square-container2">
-              <div className="align-center"></div>
-              <h2>Create Telehealth Room</h2>
-              <button className="button-89">Create a Room</button>
-            </div>
-            <div className="flip-overlay"></div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </>
   );

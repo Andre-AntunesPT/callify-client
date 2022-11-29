@@ -5,6 +5,7 @@ import axios from "axios";
 import Hero from "../components/Hero";
 import Flipbox from "../components/Flipbox";
 import CountUp from "react-countup";
+import TeamMember from "../components/TeamMember";
 
 function Events() {
   /* declare the state */
@@ -33,6 +34,7 @@ function Events() {
     getEvents();
   }, []);
 
+  /* const numberCounter = events[1].rooms.length; */
   const numberCounter = 100;
 
   return (
@@ -40,21 +42,20 @@ function Events() {
       <div className="teste">
         <Hero h1="ewfjknwef" />
       </div>
-      <Flipbox />
-      <h1>List of Events</h1>
-      {events.map((event) => {
-        return (
-          <div key={event._id} className="EventCard card">
-            <Link to={`/events/${event._id}`}>
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
-            </Link>
-          </div>
-        );
-      })}
+      <Flipbox id="FlipboxEvents" />
       <div className="CountSection">
-        <CountUp className="Count" end={numberCounter} duration={3} />
+        <p className="CountParagraph">
+          <CountUp className="Count" end={numberCounter} duration={2} />
+          <sup>+</sup>
+        </p>
         <p>Rooms already created</p>
+      </div>
+      <TeamMember />
+      <div className="CTASection">
+        <h1>Create a beautiful room right now!</h1>
+        <Link to="/events/#FlipboxEvents">
+          <button className="button-87">Create here</button>
+        </Link>
       </div>
     </div>
   );
