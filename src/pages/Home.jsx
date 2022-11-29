@@ -10,7 +10,7 @@ function Home() {
         <span id="welcome" className="z-depth-4"></span>
       </div>
       <div className="teste">
-        <Hero h1="ewfjknwef" />
+        <Hero />
       </div>
     </>
   );

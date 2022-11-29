@@ -10,6 +10,7 @@ import Events from "./pages/Events";
 import Rooms from "./pages/Rooms";
 import EventDetails from "./pages/EventDetails";
 import RoomDetails from "./pages/RoomDetails";
+import UpdateRooms from "./pages/UpdateRooms";
 import Spinner from "./components/Spinner";
 
 import Login from "./pages/Login";
@@ -43,6 +44,7 @@ function App() {
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/events/:id" element={<EventDetails />} />
             <Route path="/rooms/:id" element={<RoomDetails />} />
+            <Route path="/rooms/edit/:id" element={<UpdateRooms />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/profile/edit/:id" element={<UpdateProfile />} />
             <Route
@@ -62,10 +64,8 @@ function App() {
               }
             />
           </Routes>
-
         </div>
 
-     
         <div className="WrapperBackground"></div>
       </div>
     );

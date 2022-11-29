@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function RoomDetails() {
@@ -27,29 +27,26 @@ function RoomDetails() {
     }
   };
 
-  
-
   /* We need to call the function in a specific moment */
   useEffect(() => {
     getRooms();
     /* If we were able to go from one details view straight to another we should pass id on the dependency array below, so that everytime the component rerenders we get the information from the correct/latest id */
   }, []);
 
-
-
-  const deleteRoom = async () =>{
+  const deleteRoom = async () => {
     try {
-        await axios.delete(`${process.env.REACT_APP_API_URL}/room/${id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}/rooms/${id}`);
 
-        //after we delete we redirect back to the events list
-        navigate('/events')
+      //after we delete we redirect back to the events list
+      navigate("/rooms");
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
-}
+  };
 
   return (
     <div className="RoomDetails">
+      <Link to={`/rooms/edit/${id}`}>Edit Room</Link>
       {room && (
         /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content) */
         <>
