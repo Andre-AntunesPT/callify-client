@@ -40,7 +40,7 @@ function Navbar() {
             <li className="small">
               <Link to="/">Home</Link>
               <Link to="/">Home</Link>
-              {loggedIn && <Link to="/profile">Hey there {user.username}</Link>}
+              {loggedIn && <Link to="/profile">Profile</Link>}
             </li>
           </ul>
         </div>

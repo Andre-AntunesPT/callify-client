@@ -45,10 +45,10 @@ function UpdateRooms() {
     }
   };
 
-  const deleteProject = async () => {
+  const deleteRoom = async () => {
     try {
       await axios.delete(`${process.env.REACT_APP_API_URL}/rooms/${id}`);
-      //after we delete we redirect back to the project list
+      //after we delete we redirect back to the room list
       navigate("/rooms");
     } catch (error) {
       console.log(error);
@@ -70,8 +70,8 @@ function UpdateRooms() {
         <button type="submit">Edit Room</button>
       </form>
 
-      {/* Delete the project */}
-      <button onClick={deleteProject}>Delete room!</button>
+      {/* Delete the room */}
+      <button onClick={deleteRoom}>Delete room</button>
     </div>
   );
 }
