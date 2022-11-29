@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../contexts/auth.context";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function RoomDetails() {
   /* Apesar de ser um objecto coloca-se null senão vai ler como undefined */
   const [room, setRoom] = useState(null);
+  const [eventId, setEventId] = useState("");
 
   const { id } = useParams();
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const getRooms = async () => {
@@ -21,6 +24,7 @@ function RoomDetails() {
       );
 
       setRoom(response.data);
+      setEventId(response.data.event);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -35,7 +39,9 @@ function RoomDetails() {
 
   const deleteRoom = async () => {
     try {
-      await axios.delete(`${process.env.REACT_APP_API_URL}/rooms/${id}`);
+      await axios.delete(
+        `${process.env.REACT_APP_API_URL}/rooms/${id}/${user._id}/${eventId}`
+      );
 
       //after we delete we redirect back to the events list
       navigate("/rooms");

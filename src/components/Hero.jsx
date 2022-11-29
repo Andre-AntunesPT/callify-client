@@ -1,14 +1,18 @@
 import React from "react";
-import Home from "../pages/Home";
+import { Link } from "react-router-dom";
 
-function Hero() {
+function Hero(props) {
   return (
     <main>
       <div className="hero-image">
         <div className="hero-text">
-          {<Home /> && <h1>Callify</h1>}
-          <p>Simple way to make videocalls. No downloads, just a link.</p>
-          <button className="button-87">Discover More</button>
+          <h1>{props.title}</h1>
+          <p>{props.description}</p>
+          <Link to={props.btnLink}>
+            <button className={props.btnClass} hidden>
+              {props.btnTitle}
+            </button>
+          </Link>
         </div>
       </div>
     </main>

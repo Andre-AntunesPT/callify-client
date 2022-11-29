@@ -40,9 +40,15 @@ function Events() {
   return (
     <div className="EventsListPage">
       <div className="EventsPage">
-        <Hero />
+        <Hero
+          title="Events"
+          description="Choose the type of event you want to create"
+          bntLink="/#all-events"
+          btnClass="button-87"
+          btnTitle="Discover More"
+        />
       </div>
-      <Flipbox id="FlipboxEvents" />
+      <Flipbox id="all-events" />
       <div className="CountSection">
         <p className="CountParagraph">
           <CountUp className="Count" end={numberCounter} duration={3} />
@@ -52,9 +58,9 @@ function Events() {
       </div>
       <TeamMember />
       <div className="CTASection">
-        <h1>Create a beautiful room right now!</h1>
-        <Link to="/events/#FlipboxEvents">
-          <button className="button-87">Create here</button>
+        <h1 id="his">Create a beautiful room right now!</h1>
+        <Link to="/signup">
+          <button className="button-87">Signup now!</button>
         </Link>
       </div>
     </div>

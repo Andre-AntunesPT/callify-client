@@ -10,7 +10,13 @@ function Home() {
         <span id="welcome" className="z-depth-4"></span>
       </div>
       <div className="HomePage">
-        <Hero />
+        <Hero
+          title="Callify"
+          description="Simple way to make videocalls. No downloads, just a link."
+          bntLink="/events"
+          btnClass="button-87"
+          btnTitle="Discover More"
+        />
       </div>
     </>
   );

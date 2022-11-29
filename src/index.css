@@ -438,7 +438,7 @@ main {
 }
 
 .SingleEventPage .hero-image .hero-text {
-  top: 40vh;
+  top: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -624,6 +624,166 @@ svg {
   background-color: #2196f3;
   opacity: 0.7;
   border-radius: 50%;
+}
+
+/* Toggle Section & Image Card */
+
+.collapsible {
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  position: relative;
+}
+
+.active,
+.collapsible:hover {
+  color: #000;
+}
+
+.collapsible.active:after,
+.collapsible:hover.collapsible:after {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  background-color: #000;
+}
+
+.collapsible.active:after {
+  background-color: #000;
+}
+
+.collapsible:after {
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: transform 0.5s cubic-bezier(0.3, 0.4, 0.1, 1);
+  transition: transform 0.5s cubic-bezier(0.3, 0.4, 0.1, 1);
+  transform-origin: left;
+}
+
+.collapsible:after,
+.collapsible:before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 2px;
+  left: 0;
+  pointer-events: none;
+}
+
+.content {
+  margin: 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.content p {
+  text-align: justify;
+}
+
+.ToggleSection h2 {
+  text-align: left;
+  padding: 30px 10px;
+}
+
+.ToggleSection,
+.card-image {
+  width: 100%;
+  padding: 3vw;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.SectionsEvents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Event Card */
+
+.EventCard.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  min-width: 33vw;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  background: rgba(56, 28, 124, 0.9);
+  color: white;
+  border-radius: 10px;
+  padding: 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.TranslateSection {
+  position: absolute;
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.EventCard.card ul {
+  list-style: none;
+  padding: 20px 0px;
+}
+
+.EventCard.card img {
+  width: 50px;
+  padding: 25px 0;
+}
+
+.EventCard.card ul li {
+  margin-bottom: 10px;
+}
+
+.EventCard.card ul li:before {
+  content: ".";
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.EventCard .title {
+  color: white;
+  font-size: 18px;
+}
+
+.EventCard p {
+  margin-bottom: 20px;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-20%);
+    transform: translateY(-20%);
+  }
 }
 
 /* TESTES */

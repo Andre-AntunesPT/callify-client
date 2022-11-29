@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import CreateRoom from "../components/CreateRoom";
+import ToggleSection from "../components/ToggleSection";
+import ImageCard from "../components/ImageCard";
+import EventCard from "../components/EventCard";
 import ImageComparison from "../components/ImageComparison";
 
 import Hero from "../components/Hero";
@@ -41,17 +44,43 @@ function EventDetails() {
   return (
     <div className="EventDetails">
       <div className="SingleEventPage">
-        <Hero />
+        <Hero
+          title={event && event.title}
+          description={event && event.description}
+        />
       </div>
-      {event && (
-        /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
-        <>
-          <h1>{event.title}</h1>
-          <p>{event.description}</p>
-          <CreateRoom refreshProjects={getEvents} />
-        </>
-      )}
-      {/* <ImageComparison /> */}
+      <div className="TranslateSection">
+        <EventCard
+          h1={event && event.title}
+          pTitle={event && event.description}
+          p={event && event.description}
+          li1={event && event.title}
+          li2={event && event.title}
+          li3={event && event.title}
+          li4={event && event.title}
+          li5={event && event.title}
+          link="#teste"
+        />
+        <div className="SectionsEvents">
+          <ToggleSection
+            title="Lorem Ipsum"
+            title1="Lorem Ipsum"
+            description1="Loresm Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+            title2="Lorem Ipsum"
+            description2="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+            title3="Lorem Ipsum"
+            description3="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+          />
+          <ImageCard />
+        </div>
+        {event && (
+          /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
+          <>
+            <CreateRoom refreshProjects={getEvents} id="teste" />
+          </>
+        )}
+        {/* <ImageComparison /> */}
+      </div>
     </div>
   );
 }
