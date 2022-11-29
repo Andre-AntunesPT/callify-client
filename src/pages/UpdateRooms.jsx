@@ -59,7 +59,7 @@ function UpdateRooms() {
     <div className="EditRoomPage">
       <h3>Edit room</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="userRoomName">Title</label>
+        <label htmlFor="userRoomName">New room name</label>
         <input
           type="text"
           name="userRoomName"

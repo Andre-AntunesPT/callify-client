@@ -4,6 +4,7 @@ import axios from "axios";
 
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
+  const [roomColor, setRoomColor] = useState("");
   
 
   const { id } = useParams();
@@ -11,6 +12,7 @@ function CreateRoom(props) {
   const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
+  const handleRoomColor = (e) => setRoomColor(e.target.value);
   
 
   const handleSubmit = async (e) => {
@@ -23,6 +25,7 @@ function CreateRoom(props) {
         {
           userRoomName,
           eventId: id,
+          roomColor,
         },
         {
           headers: { Authorization: `Bearer ${storedToken}` },
@@ -31,6 +34,7 @@ function CreateRoom(props) {
 
       /* Clear the inputs */
       setUserRoomName("");
+      setRoomColor("")
      
       /* redirect */
 
@@ -51,7 +55,15 @@ function CreateRoom(props) {
           value={userRoomName}
           onChange={handleUserRoomName}
         />
-
+      <select name="roomColor" onClick={handleRoomColor}>
+          {roomColor.map((roomColor) => {
+            return (
+              <option value={roomColor} key={roomColor}>
+                {roomColor}
+              </option>
+            );
+          })}
+      </select>
         <button type="submit">Create Room</button> 
       </form>
      
