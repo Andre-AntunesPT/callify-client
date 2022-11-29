@@ -25,11 +25,6 @@ function Profile() {
 console.log(user)
   return (
     <div>
-
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
     
         <h1>Welcome, {thisUser.username}</h1>
         <img src={thisUser.imageUrl} alt="profilepic"/>
