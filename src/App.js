@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Rooms from "./pages/Rooms";
+import Collection from "./pages/Collection";
 import EventDetails from "./pages/EventDetails";
 import RoomDetails from "./pages/RoomDetails";
 import UpdateRooms from "./pages/UpdateRooms";
@@ -18,7 +19,6 @@ import Signup from "./pages/Signup";
 import Anon from "./components/Anon";
 import Profile from "./pages/Profile";
 import UpdateProfile from "./pages/UpdateProfile";
-
 
 import Private from "./components/Private";
 
@@ -51,6 +51,14 @@ function App() {
               element={
                 <Private>
                   <Rooms />
+                </Private>
+              }
+            />
+            <Route
+              path="/collection"
+              element={
+                <Private>
+                  <Collection />
                 </Private>
               }
             />

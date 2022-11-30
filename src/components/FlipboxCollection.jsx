@@ -1,0 +1,57 @@
+import { React, useState, useEffect } from "react";
+import axios from "axios";
+
+function FlipboxCollection() {
+  /* declare the state */
+  const [events, setEvents] = useState([]);
+
+  /* function to call the API */
+  const getEvents = async () => {
+    try {
+      /* process.env.REACT_APP_API_URL is referring to localhost 5005 locally but will be the deployed URL in the future */
+      const storedToken = localStorage.getItem("authToken");
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/events`,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
+      );
+
+      setEvents(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, []);
+
+  return (
+    <>
+      <div className="FlipboxCollection">
+        {events.map((event) => {
+          return (
+            <div className="EventCard card">
+              <img src="/assets/images/phone-call.png" alt="Phone" />
+              <h1>
+                <small>
+                  <span>{event.rooms.length}</span> Rooms Created
+                </small>
+              </h1>
+              <h1>{event.title}</h1>
+              <p>
+                <a href={`/events/${event._id}`}>
+                  <button className="button-89">Create a Room</button>
+                </a>
+              </p>
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
+export default FlipboxCollection;
