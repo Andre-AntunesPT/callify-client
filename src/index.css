@@ -786,6 +786,56 @@ svg {
   }
 }
 
+/* FORM */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.meu-box {
+  position: relative;
+  margin: 25px 0;
+}
+
+.input-nome {
+  width: 100%;
+  position: relative;
+  font-size: 16px;
+  color: #5b5b5b;
+  border: 1px solid rgba(56, 28, 124, 0.9);
+  padding: 10px 10px 10px 15px;
+  box-sizing: content-box;
+  z-index: 2;
+  border-radius: 5px;
+}
+
+.label-nome {
+  width: 100%;
+  position: absolute;
+  color: rgba(56, 28, 124, 0.9);
+  font-weight: bold;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+}
+
+.input-nome:focus + .label-nome {
+  margin-top: 0px;
+  top: -50%;
+  z-index: 2;
+  transition: 0.2s;
+}
+
+input.input-nome:focus-visible {
+  border: 1px solid rgba(56, 28, 124, 0.9);
+  outline: 2px solid rgba(56, 28, 124, 0.9);
+}
+
 /* TESTES */
 .iframe-teste {
   height: 700px;
