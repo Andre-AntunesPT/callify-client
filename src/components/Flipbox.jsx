@@ -46,9 +46,9 @@ function Flipbox() {
                 <div className="square-container2">
                   <div className="align-center"></div>
                   <h2>Create {event.title}</h2>
-                  <Link to={`/events/${event._id}`}>
+                  <a href={`/events/${event._id}`}>
                     <button className="button-89">Create a Room</button>
-                  </Link>
+                  </a>
                 </div>
                 <div className="flip-overlay"></div>
               </div>

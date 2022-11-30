@@ -1,10 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import CreateRoom from "../components/CreateRoom";
 import ToggleSection from "../components/ToggleSection";
 import ImageCard from "../components/ImageCard";
 import EventCard from "../components/EventCard";
+import Login from "../components/Login";
+import { AuthContext } from "../contexts/auth.context";
 import ImageComparison from "../components/ImageComparison";
 
 import Hero from "../components/Hero";
@@ -13,6 +15,7 @@ function EventDetails() {
   /* Apesar de ser um objecto coloca-se null senão vai ler como undefined */
   const [event, setEvent] = useState(null);
   //const [rooms, setRoom] = useState(null);
+  const { loggedIn } = useContext(AuthContext);
 
   const { id } = useParams();
 
@@ -73,11 +76,16 @@ function EventDetails() {
           />
           <ImageCard />
         </div>
-
-        {event && (
+        {loggedIn && (
           /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
           <>
             <CreateRoom refreshProjects={getEvents} id="teste" />
+          </>
+        )}
+        {!loggedIn && (
+          /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
+          <>
+            <Login />
           </>
         )}
         {/* <ImageComparison /> */}
