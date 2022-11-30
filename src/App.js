@@ -19,6 +19,7 @@ import Anon from "./components/Anon";
 import Profile from "./pages/Profile";
 import UpdateProfile from "./pages/UpdateProfile";
 
+
 import Private from "./components/Private";
 
 function App() {
