@@ -840,6 +840,36 @@ input:focus::placeholder {
   color: transparent;
 }
 
+/* Rooms Cards */
+
+.RoomsListPage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.RoomsCard.square-flip {
+  width: 20vw;
+  min-height: 20vw;
+}
+
+.RoomsCard.square-flip h2 {
+  margin-bottom: 10px;
+}
+
+.RoomsCard.square-flip p {
+  color: white;
+}
+
+.RoomsCard.square-flip button {
+  margin: 10px 0;
+}
+
+.RoomsCard.square-flip button.btn-delete {
+  --color: #ff3c35;
+}
+
 /* TESTES */
 .iframe-teste {
   height: 700px;

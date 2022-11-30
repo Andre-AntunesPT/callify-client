@@ -20,7 +20,7 @@
   box-sizing: initial;
   overflow: hidden;
 
-  border-radius: 50%;
+  border-radius: 0%;
   transform: translate(-50%, -50%);
   animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
     borderRadius 0.2s 2.3s linear forwards;

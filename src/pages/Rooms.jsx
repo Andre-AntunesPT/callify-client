@@ -1,10 +1,15 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../contexts/auth.context";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function Rooms() {
   /* declare the state */
   const [rooms, setRooms] = useState([]);
+  const { user } = useContext(AuthContext);
+  const [eventId, setEventId] = useState("");
+
+  const navigate = useNavigate();
 
   /* function to call the API */
   const getRooms = async () => {
@@ -19,6 +24,7 @@ function Rooms() {
       );
 
       setRooms(response.data);
+      setEventId(response.data.rooms.event);
       console.log(response.data);
     } catch (error) {
       console.log(error);
@@ -30,19 +36,48 @@ function Rooms() {
     getRooms();
   }, []);
 
+  const deleteRoom = async () => {
+    try {
+      await axios.delete(
+        `${process.env.REACT_APP_API_URL}/rooms/${rooms.id}/${user._id}/${eventId.id}`
+      );
+      //after we delete we redirect back to the room list
+      navigate("/rooms");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="RoomsListPage">
-      <h1>List of rooms</h1>
-      {rooms.map((room) => {
-        return (
-          <div key={room._id} className="RoomCard card">
-            <Link to={`/rooms/${room._id}`}>
-              <h3>{room.userRoomName}</h3>
-              <p>{room.roomUrl}</p>
-            </Link>
-          </div>
-        );
-      })}
+      {user &&
+        rooms.map((room) => {
+          return (
+            <div key={room._id} class="RoomsCard square-flip">
+              <div className="square">
+                <div className="square-container">
+                  <h2 className="textshadow">{room.userRoomName}</h2>
+                  <p className="textshadow">Created at:</p>
+                  <p className="textshadow">{room.startDate}</p>
+                </div>
+                <div className="flip-overlay"></div>
+              </div>
+              <div className="square2">
+                <div className="square-container2">
+                  <div className="align-center"></div>
+                  <Link to={`/rooms/${room._id}`}>
+                    <button className="button-89">Go to Room</button>
+                  </Link>
+
+                  <button className="button-89 btn-delete" onClick={deleteRoom}>
+                    Delete room
+                  </button>
+                </div>
+                <div className="flip-overlay"></div>
+              </div>
+            </div>
+          );
+        })}
     </div>
   );
 }

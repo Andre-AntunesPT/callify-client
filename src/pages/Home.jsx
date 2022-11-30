@@ -13,7 +13,7 @@ function Home() {
         <Hero
           title="Callify"
           description="Simple way to make videocalls. No downloads, just a link."
-          bntLink="/events"
+          btnLink="/events"
           btnClass="button-87"
           btnTitle="Discover More"
         />

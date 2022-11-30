@@ -8,7 +8,6 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProviderWrapper } from "./contexts/auth.context";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -56,4 +55,15 @@ document.ready(function ($) {
     firstImage.css("background-image", "url(" + getImage + ")");
     secondImage.css("background-image", "url(" + getImage2 + ")");
   }
+});
+
+// why it doesn't work on firefox?
+const card = document.getElementsByClassName(".RoomCard");
+const parent = card.parent();
+const fieldOfView = (window.innerWidth / window.innerHeight) * 16;
+
+document.on("mousemove", function (e) {
+  var ax = -(parent.width() * 0.5 - e.pageX) / fieldOfView;
+  var ay = (parent.height() * 0.5 - e.pageY) / fieldOfView;
+  card.css("transform", "rotateY(" + ax + "deg) rotateX(" + ay + "deg)");
 });
