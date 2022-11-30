@@ -77,14 +77,21 @@ function UpdateRooms() {
           value={userRoomName}
           onChange={handleUserRoomName}
         />
-        <label htmlFor="palette">Palette</label>
+      {/*   <label htmlFor="palette">Palette</label>
         <input
           type="text"
           name="palette"
           value={palette}
           onChange={handlePalette}
-        />
+        /> */}
 
+        <select name="roomColor" onClick={handlePalette}>
+              <option  value="default">Default</option>
+              <option  value="grey">Grey</option>
+              <option  value="purple">Purple</option>
+              <option  value="burgund">Burgundi</option>
+        </select> 
+        
         <button type="submit">Edit Room</button>
       </form>
 

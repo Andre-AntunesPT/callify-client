@@ -60,7 +60,7 @@ function RoomDetails() {
           <p>{room.roomUrl}</p>
           <iframe
             src={room.roomUrl}
-            allow="camera; microphone; fullscreen; speaker; display-capture"
+            allow="camera; microphone; fullscreen; speaker; display-capture >"
             className="iframe-teste"
             title="iframe"
           ></iframe>

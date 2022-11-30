@@ -5,7 +5,7 @@ import axios from "axios";
 
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
-  const [palette, setPalette] = useState('')
+  const [palette, setPalette] = useState('');
 
   const { id } = useParams();
 
@@ -14,7 +14,8 @@ function CreateRoom(props) {
   const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
-  const handlePalette = (e) => setPalette(e.target.value)
+  const handlePalette = (e) => setPalette(e.target.value);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,6 +62,7 @@ function CreateRoom(props) {
               <option  value="purple">Purple</option>
               <option  value="burgund">Burgundi</option>
         </select> 
+
         <button type="submit">Create Room</button>
       </form>
     </div>
