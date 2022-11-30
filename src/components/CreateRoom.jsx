@@ -5,6 +5,7 @@ import axios from "axios";
 
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
+  const [palette, setPalette] = useState('')
 
   const { id } = useParams();
 
@@ -13,6 +14,7 @@ function CreateRoom(props) {
   const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
+  const handlePalette = (e) => setPalette(e.target.value)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ function CreateRoom(props) {
         `${process.env.REACT_APP_API_URL}/rooms`,
         {
           userRoomName,
+          palette,
           eventId: id,
           userId: user._id,
         },
@@ -52,15 +55,12 @@ function CreateRoom(props) {
           value={userRoomName}
           onChange={handleUserRoomName}
         />
-        {/* <select name="roomColor" onClick={handlePalette}>
-          {palette.map((roomColor) => {
-            return (
-              <option value={roomColor} key={roomColor}>
-                {roomColor}
-              </option>
-            );
-          })}
-        </select> */}
+        <select name="roomColor" onClick={handlePalette}>
+              <option  value="default">Default</option>
+              <option  value="grey">Grey</option>
+              <option  value="purple">Purple</option>
+              <option  value="burgund">Burgundi</option>
+        </select> 
         <button type="submit">Create Room</button>
       </form>
     </div>

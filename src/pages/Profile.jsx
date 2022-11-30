@@ -19,7 +19,7 @@ function Profile() {
   
   useEffect(() => {
       getProfile();
-  }, []);
+  }, [user]);
 
 
 console.log(user)
