@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { HashLink as LinkAnchor } from "react-router-hash-link";
 
 import Hero from "../components/Hero";
 import Flipbox from "../components/Flipbox";
@@ -43,12 +44,14 @@ function Events() {
         <Hero
           title="Events"
           description="Choose the type of event you want to create"
-          bntLink="/#all-events"
+          btnLink="/events#all-events"
           btnClass="button-87"
           btnTitle="Discover More"
         />
       </div>
-      <Flipbox id="all-events" />
+      <div id="all-events">
+        <Flipbox />
+      </div>
       <div className="CountSection">
         <p className="CountParagraph">
           <CountUp className="Count" end={numberCounter} duration={3} />
@@ -59,9 +62,9 @@ function Events() {
       <TeamMember />
       <div className="CTASection">
         <h1 id="his">Create a beautiful room right now!</h1>
-        <Link to="/signup">
+        <a href="/signup">
           <button className="button-87">Signup now!</button>
-        </Link>
+        </a>
       </div>
     </div>
   );

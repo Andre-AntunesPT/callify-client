@@ -21,7 +21,7 @@ function ToggleSection(props) {
       <h2>{props.title}</h2>
       <button class="collapsible">{props.title1}</button>
       <div class="content">
-        <p>a{props.description1}</p>
+        <p>{props.description1}</p>
       </div>
       <button class="collapsible">{props.title2}</button>
       <div class="content">
