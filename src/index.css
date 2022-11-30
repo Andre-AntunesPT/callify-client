@@ -405,6 +405,7 @@ main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../public/assets/images/home-bg.jpeg");
   min-height: 100vh;
+  margin-top: 0px;
 }
 
 .HomePage .hero-image .hero-text {
@@ -801,7 +802,6 @@ form {
 }
 
 .input-nome {
-  width: 100%;
   position: relative;
   font-size: 16px;
   color: #5b5b5b;
@@ -810,6 +810,7 @@ form {
   box-sizing: content-box;
   z-index: 2;
   border-radius: 5px;
+  text-align: center;
 }
 
 .label-nome {
@@ -834,6 +835,10 @@ form {
 input.input-nome:focus-visible {
   border: 1px solid rgba(56, 28, 124, 0.9);
   outline: 2px solid rgba(56, 28, 124, 0.9);
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 /* TESTES */

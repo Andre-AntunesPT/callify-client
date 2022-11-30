@@ -24,11 +24,15 @@ import Private from "./components/Private";
 
 function App() {
   const [loading, setLoading] = useState(true);
-
-  //SetTimeout just for demonstration purposes
-  setTimeout(() => {
-    setLoading(false);
-  }, 1000);
+  if (window.location.pathname === "/") {
+    setTimeout(() => {
+      setLoading(false);
+    }, 0);
+  } else {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }
 
   if (loading) {
     return <Spinner />;
