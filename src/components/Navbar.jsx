@@ -21,24 +21,24 @@ function Navbar() {
             <li>
               <a href="/events">Events</a>
             </li>
-            <li>{loggedIn && <Link to="/rooms">My Rooms</Link>}</li>
+            <li>{loggedIn && <a href="/rooms">My Rooms</a>}</li>
             {loggedIn && (
               <li>
-                <Link to="/rooms" onClick={logout}>
+                <a href="/rooms" onClick={logout}>
                   Logout
-                </Link>
+                </a>
               </li>
             )}
             {!loggedIn && (
               <li>
-                <Link to="/signup">Signup</Link>
-                <Link to="/login">Login</Link>
+                <a href="/signup">Signup</a>
+                <a href="/login">Login</a>
               </li>
             )}
             <li className="small">
-              <Link to="/">Home</Link>
-              <Link to="/">Home</Link>
-              {loggedIn && <Link to="/profile">Profile</Link>}
+              <a href="/">Home</a>
+              <a href="/">Home</a>
+              {loggedIn && <a href="/profile">Profile</a>}
             </li>
           </ul>
         </div>

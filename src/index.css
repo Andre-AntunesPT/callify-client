@@ -802,7 +802,6 @@ form {
 }
 
 .input-nome {
-  width: 100%;
   position: relative;
   font-size: 16px;
   color: #5b5b5b;
@@ -811,6 +810,7 @@ form {
   box-sizing: content-box;
   z-index: 2;
   border-radius: 5px;
+  text-align: center;
 }
 
 .label-nome {
@@ -835,6 +835,10 @@ form {
 input.input-nome:focus-visible {
   border: 1px solid rgba(56, 28, 124, 0.9);
   outline: 2px solid rgba(56, 28, 124, 0.9);
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 /* TESTES */
