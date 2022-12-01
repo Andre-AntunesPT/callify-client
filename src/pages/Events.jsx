@@ -37,7 +37,11 @@ function Events() {
     getEvents();
   }, []);
 
-  /* const numberCounter = events[1].rooms.length; */
+  /* const numberCounter =
+    events[0].rooms.length +
+    events[1].rooms.length +
+    events[2].rooms.length +
+    events[3].rooms.length; */
   const numberCounter = 17;
 
   return (
