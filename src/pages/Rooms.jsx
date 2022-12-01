@@ -6,6 +6,7 @@ import axios from "axios";
 function Rooms() {
   /* declare the state */
   const [rooms, setRooms] = useState([]);
+  const [date, setDate] = useState("");
   const [eventId, setEventId] = useState("");
 
   const { user } = useContext(AuthContext);
@@ -26,10 +27,15 @@ function Rooms() {
 
       setRooms(response.data);
       setEventId(response.data.event);
-    
-      
-      
-      console.log(user._id);
+      console.log(response.data);
+
+      let i;
+      for (i = 0; i < response.data.length; i++) {
+        const sliceDate = response.data[i].startDate.slice(0, 10);
+        setDate(sliceDate);
+      }
+
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -61,8 +67,12 @@ function Rooms() {
               <div className="square">
                 <div className="square-container">
                   <h2 className="textshadow">{room.userRoomName}</h2>
-                  <p className="textshadow">Created at:</p>
-                  <p className="textshadow">{room.startDate}</p>
+                  <p className="textshadow">{date}</p>
+                  <img
+                    src="/assets/images/right-arrow_callify.png"
+                    alt="Callify - Arrow"
+                    className="FlipArrow"
+                  />
                 </div>
                 <div className="flip-overlay"></div>
               </div>

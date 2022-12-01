@@ -14,9 +14,6 @@ function TeamMember(props) {
         <li>{props.li1}</li>
         <li>{props.li2}</li>
         <li>{props.li3}</li>
-        <li>{props.li3}</li>
-        <li>{props.li4}</li>
-        <li>{props.li5}</li>
       </ul>
       <p>
         <LinkAnchor to={props.link} smooth>

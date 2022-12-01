@@ -874,6 +874,7 @@ div#all-events {
 
 .EventCard.card ul li {
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .EventCard.card ul li:before {
@@ -885,6 +886,7 @@ div#all-events {
 .EventCard .title {
   color: white;
   font-size: 18px;
+  text-align: left;
 }
 
 .EventCard p {

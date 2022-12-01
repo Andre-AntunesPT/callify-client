@@ -88,7 +88,6 @@ function EventDetails() {
             li1="No chat"
             li2="Youtube Integration"
             li3="Host Spotlight"
-            li4="Option to change the name"
             link="#CreateRoomSection"
           />
         )}
