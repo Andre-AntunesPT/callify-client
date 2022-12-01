@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
@@ -21,8 +21,10 @@ import Profile from "./pages/Profile";
 import UpdateProfile from "./pages/UpdateProfile";
 
 import Private from "./components/Private";
+import { AuthContext } from "./contexts/auth.context";
 
 function App() {
+  const { loggedIn } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   if (window.location.pathname === "/") {
     setTimeout(() => {

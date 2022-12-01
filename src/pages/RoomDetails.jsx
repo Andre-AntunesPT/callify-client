@@ -1,12 +1,15 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../contexts/auth.context";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import LoginIframe from "../components/LoginIframe";
 import axios from "axios";
 
 function RoomDetails() {
   /* Apesar de ser um objecto coloca-se null senão vai ler como undefined */
   const [room, setRoom] = useState(null);
   const [eventId, setEventId] = useState("");
+
+  const { loggedIn } = useContext(AuthContext);
 
   const { id } = useParams();
   const { user } = useContext(AuthContext);
@@ -52,18 +55,67 @@ function RoomDetails() {
 
   return (
     <div className="RoomDetails">
-      <Link to={`/rooms/edit/${id}`}>Edit Room</Link>
-      {room && (
+      {loggedIn && room && (
         /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content) */
         <>
-          <h1>{room.userRoomName}</h1>
-          <p>{room.roomUrl}</p>
-          <iframe
-            src={room.roomUrl}
-            allow="camera; microphone; fullscreen; speaker; display-capture >"
-            className="iframe-teste"
-            title="iframe"
-          ></iframe>
+          <div className="RoomHeader">
+            <h1>{room.userRoomName}</h1>
+
+            <div>
+              <Link to={`/rooms/edit/${id}`}>
+                <button class="edit" type="button">
+                  <span class="edit-icon"></span>
+                  <span>Edit</span>
+                </button>
+              </Link>
+
+              <button class="edit delete" type="button" onClick={deleteRoom}>
+                <span class="edit-icon"></span>
+                <span>Delete Room</span>
+              </button>
+            </div>
+          </div>
+          {/* Webinar - Não apagar ID */}
+          {room.event === "63864304b5461f5ed5d8320e" && (
+            <iframe
+              src={`${room.roomUrl}`}
+              allow="camera; microphone; fullscreen; speaker; display-capture >"
+              className="iframe-teste"
+              title="iframe"
+            ></iframe>
+          )}
+          {/* E-learning - Não apagar ID  */}
+          {room.event === "638642e8b5461f5ed5d8320c" && (
+            <iframe
+              src={`${room.roomUrl}?chat=off`}
+              allow="camera; microphone; fullscreen; speaker; display-capture >"
+              className="iframe-teste"
+              title="iframe"
+            ></iframe>
+          )}
+          {/* Team meeting - Não apagar ID  */}
+          {room.event === "63864310b5461f5ed5d83210" && (
+            <iframe
+              src={`${room.roomUrl}?chat=off`}
+              allow="camera; microphone; fullscreen; speaker; display-capture >"
+              className="iframe-teste"
+              title="iframe"
+            ></iframe>
+          )}
+          {/* Telehealth - Não apagar ID  */}
+          {room.event === "6386431cb5461f5ed5d83212" && (
+            <iframe
+              src={`${room.roomUrl}?chat=off`}
+              allow="camera; microphone; fullscreen; speaker; display-capture >"
+              className="iframe-teste"
+              title="iframe"
+            ></iframe>
+          )}
+        </>
+      )}
+      {!loggedIn && (
+        <>
+          <LoginIframe />
         </>
       )}
 
