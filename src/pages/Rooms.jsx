@@ -6,7 +6,6 @@ import axios from "axios";
 function Rooms() {
   /* declare the state */
   const [rooms, setRooms] = useState([]);
-  const [currentUser, setCurrentUser] = useState(null);
   const [myRoom, setMyRoom] = useState(false);
   const [eventId, setEventId] = useState("");
 
@@ -28,7 +27,7 @@ function Rooms() {
 
       setRooms(response.data);
       setEventId(response.data.event);
-      setCurrentUser(response.data[10].user);
+      
       if (response.data[10].user === user._id) {
         setMyRoom(true);
       }
