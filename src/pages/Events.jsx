@@ -45,7 +45,8 @@ function Events() {
       <div className="EventsPage">
         <Hero
           title="Events"
-          description="Choose the type of event you want to create"
+          description="No maintenance required so you can focus on creating secure and beautiful video calls.
+Choose the type of event you want to create"
           btnLink="/events#all-events"
           btnClass="button-87"
           btnTitle="Discover More"

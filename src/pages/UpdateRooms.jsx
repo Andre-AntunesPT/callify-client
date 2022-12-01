@@ -89,12 +89,6 @@ function UpdateRooms() {
               <option value="burgund">Burgundi</option>
             </select>
 
-            {/* <select name="roomColor" onClick={handlePalette}>
-              <option value="default">Default</option>
-              <option value="grey">Grey</option>
-              <option value="purple">Purple</option>
-              <option value="burgund">Burgundi</option>
-            </select> */}
           </div>
           <button className="button-89" type="submit">
             Edit Room

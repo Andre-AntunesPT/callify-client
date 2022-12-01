@@ -78,7 +78,7 @@ function RoomDetails() {
           {/* Webinar - Não apagar ID */}
           {room.event === "63864304b5461f5ed5d8320e" && (
             <iframe
-              src={`${room.roomUrl}`}
+              src={`${room.roomUrl}?settingsButton=off&?people=off&roomIntegrations`}
               allow="camera; microphone; fullscreen; speaker; display-capture >"
               className="iframe-teste"
               title="iframe"
@@ -87,7 +87,7 @@ function RoomDetails() {
           {/* E-learning - Não apagar ID  */}
           {room.event === "638642e8b5461f5ed5d8320c" && (
             <iframe
-              src={`${room.roomUrl}?chat=off`}
+              src={`${room.roomUrl}?chat=off&settingsButton=off&breakout=on`}
               allow="camera; microphone; fullscreen; speaker; display-capture >"
               className="iframe-teste"
               title="iframe"
@@ -96,7 +96,7 @@ function RoomDetails() {
           {/* Team meeting - Não apagar ID  */}
           {room.event === "63864310b5461f5ed5d83210" && (
             <iframe
-              src={`${room.roomUrl}?chat=off`}
+              src={`${room.roomUrl}?chat=off&autoSpotlight&subgridLabels=on`}
               allow="camera; microphone; fullscreen; speaker; display-capture >"
               className="iframe-teste"
               title="iframe"
@@ -105,7 +105,7 @@ function RoomDetails() {
           {/* Telehealth - Não apagar ID  */}
           {room.event === "6386431cb5461f5ed5d83212" && (
             <iframe
-              src={`${room.roomUrl}?chat=off`}
+              src={`${room.roomUrl}?people=off&timer=on`}
               allow="camera; microphone; fullscreen; speaker; display-capture >"
               className="iframe-teste"
               title="iframe"
@@ -118,8 +118,8 @@ function RoomDetails() {
           <LoginIframe />
         </>
       )}
-
-      <button onClick={deleteRoom}>Delete Room</button>
+{/* 
+      <button onClick={deleteRoom}>Delete Room</button> */}
 
       {/* {event &&
         event.rooms.map((room) => (
