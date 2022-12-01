@@ -212,3 +212,8 @@
 .clearfix {
   clear: both;
 }
+
+.FlipArrow {
+  width: 30px;
+  padding: 25px 0;
+}

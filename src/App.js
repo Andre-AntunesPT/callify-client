@@ -63,6 +63,14 @@ function App() {
               }
             />
             <Route path="/events/:id" element={<EventDetails />} />
+            {/* <Route
+              path="/rooms/:id"
+              element={
+                <Private>
+                  <RoomDetails />
+                </Private>
+              }
+            /> */}
             <Route path="/rooms/:id" element={<RoomDetails />} />
             <Route path="/rooms/edit/:id" element={<UpdateRooms />} />
             <Route path="/profile" element={<Profile />} />

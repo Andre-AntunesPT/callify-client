@@ -1,6 +1,7 @@
 import React from "react";
 import "../intro.css";
 import Hero from "../components/Hero";
+/* import VideoBackground from "/assets/video/video-bg.mp4"; */
 
 function Home() {
   return (

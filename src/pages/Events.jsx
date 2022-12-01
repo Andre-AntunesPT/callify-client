@@ -49,9 +49,6 @@ function Events() {
           btnTitle="Discover More"
         />
       </div>
-      <div id="all-events">
-        <Flipbox />
-      </div>
       <div className="CountSection">
         <p className="CountParagraph">
           <CountUp className="Count" end={numberCounter} duration={3} />
@@ -59,12 +56,17 @@ function Events() {
         </p>
         <p>Rooms already created</p>
       </div>
-      <TeamMember />
+      <div id="all-events">
+        <Flipbox />
+      </div>
       <div className="CTASection">
         <h1 id="his">Create a beautiful room right now!</h1>
         <a href="/signup">
           <button className="button-87">Signup now!</button>
         </a>
+      </div>
+      <div className="TeamMemberSection">
+        <TeamMember />
       </div>
     </div>
   );

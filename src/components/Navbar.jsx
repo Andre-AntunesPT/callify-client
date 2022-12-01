@@ -8,12 +8,12 @@ function Navbar() {
     <>
       <div id="nav-container">
         <div className="bg"></div>
-        <div className="nav-button" tabindex="0">
+        <div className="nav-button" tabIndex="0">
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
           <span className="icon-bar"></span>
         </div>
-        <div id="nav-content" tabindex="0">
+        <div id="nav-content" tabIndex="0">
           <ul>
             <li>
               <a href="/">Home</a>
@@ -37,19 +37,35 @@ function Navbar() {
               </li>
             )}
             <li className="small">
-              <a href="/">Home</a>
-              <a href="/">Home</a>
-              {loggedIn && <a href="/profile">Profile</a>}
+              <a href="/">
+                <img
+                  src="/assets/images/logo-callify_white.png"
+                  alt="Callify - Logo"
+                  className="logo-callify-menu"
+                />
+              </a>
+              {loggedIn && (
+                <a href="/profile">
+                  <img
+                    src="/assets/images/user-callify.png"
+                    alt="Callify - Logo"
+                    className="profile-icon-menu"
+                  />
+                </a>
+              )}
+              {!loggedIn && (
+                <a href="/login">
+                  <img
+                    src="/assets/images/user-callify.png"
+                    alt="Callify - Logo"
+                    className="profile-icon-menu"
+                  />
+                </a>
+              )}
             </li>
           </ul>
         </div>
       </div>
-      {/* <input type="checkbox" id="navigation" />
-      <label for="navigation" id="navigation-label">
-        +
-      </label> */}
-      {/* <nav>
-      </nav> */}
     </>
   );
 }

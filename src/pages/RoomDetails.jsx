@@ -52,12 +52,26 @@ function RoomDetails() {
 
   return (
     <div className="RoomDetails">
-      <Link to={`/rooms/edit/${id}`}>Edit Room</Link>
       {room && (
         /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content) */
         <>
-          <h1>{room.userRoomName}</h1>
-          <p>{room.roomUrl}</p>
+          <div className="RoomHeader">
+            <h1>{room.userRoomName}</h1>
+
+            <div>
+              <Link to={`/rooms/edit/${id}`}>
+                <button class="edit" type="button">
+                  <span class="edit-icon"></span>
+                  <span>Edit</span>
+                </button>
+              </Link>
+
+              <button class="edit delete" type="button" onClick={deleteRoom}>
+                <span class="edit-icon"></span>
+                <span>Delete Room</span>
+              </button>
+            </div>
+          </div>
           <iframe
             src={room.roomUrl}
             allow="camera; microphone; fullscreen; speaker; display-capture"
@@ -66,8 +80,6 @@ function RoomDetails() {
           ></iframe>
         </>
       )}
-
-      <button onClick={deleteRoom}>Delete Room</button>
 
       {/* {event &&
         event.rooms.map((room) => (

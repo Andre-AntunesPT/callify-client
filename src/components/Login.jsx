@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../contexts/auth.context";
 
 function Login(props) {
@@ -8,6 +8,7 @@ function Login(props) {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const { id } = useParams();
 
   const navigate = useNavigate();
   const { storeToken, authenticateUser } = useContext(AuthContext);
@@ -33,7 +34,7 @@ function Login(props) {
       authenticateUser();
 
       //redirect
-      navigate("/profile");
+      navigate(`/events/${id}`);
     } catch (error) {
       const errorDescription = error.response.data.message;
       setErrorMessage(errorDescription);
@@ -41,9 +42,8 @@ function Login(props) {
   };
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
-
       <form onSubmit={handleLoginSubmit}>
+        <h1>Login</h1>
         <div class="conteudo">
           <div class="meu-box">
             <input
@@ -69,27 +69,16 @@ function Login(props) {
             <label class="label-nome">Password</label>
           </div>
 
-          <div class="meu-box">
-            <input
-              class="input-nome"
-              type="text"
-              name="username"
-              value={username}
-              onChange={handleUsername}
-              placeholder="Username"
-            />
-            <label class="label-nome">Username</label>
-          </div>
+          <button className="button-89" type="submit">
+            Login
+          </button>
+
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
         </div>
-        <button className="button-89" type="submit">
-          Login
-        </button>
+
+        <p>Don't have an account yet?</p>
+        <Link to="/signup">Signup!</Link>
       </form>
-
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Don't have an account yet?</p>
-      <Link to="/login"> Signup! </Link>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { HashLink as LinkAnchor } from "react-router-hash-link";
 
 function TeamMember(props) {
   return (
@@ -19,9 +19,9 @@ function TeamMember(props) {
         <li>{props.li5}</li>
       </ul>
       <p>
-        <a href={props.link}>
+        <LinkAnchor to={props.link} smooth>
           <button className="button-87">Create a room!</button>
-        </a>
+        </LinkAnchor>
       </p>
     </div>
   );

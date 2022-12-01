@@ -6,8 +6,11 @@ import axios from "axios";
 function Rooms() {
   /* declare the state */
   const [rooms, setRooms] = useState([]);
-  const { user } = useContext(AuthContext);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [myRoom, setMyRoom] = useState(false);
   const [eventId, setEventId] = useState("");
+
+  const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -24,8 +27,13 @@ function Rooms() {
       );
 
       setRooms(response.data);
-      setEventId(response.data.rooms.event);
-      console.log(response.data);
+      setEventId(response.data.event);
+      setCurrentUser(response.data[10].user);
+      if (response.data[10].user === user._id) {
+        setMyRoom(true);
+      }
+      console.log(response.data[10].user);
+      console.log(user._id);
     } catch (error) {
       console.log(error);
     }
@@ -34,7 +42,7 @@ function Rooms() {
   /* We need to call the function in a specific moment */
   useEffect(() => {
     getRooms();
-  }, []);
+  }, [user]);
 
   const deleteRoom = async () => {
     try {
@@ -50,7 +58,7 @@ function Rooms() {
 
   return (
     <div className="RoomsListPage">
-      {user &&
+      {myRoom &&
         rooms.map((room) => {
           return (
             <div key={room._id} class="RoomsCard square-flip">

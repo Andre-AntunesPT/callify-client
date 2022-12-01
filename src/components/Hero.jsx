@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { HashLink as LinkAnchor } from "react-router-hash-link";
 
 function Hero(props) {

@@ -62,7 +62,7 @@ function EventDetails() {
           li3={event && event.title}
           li4={event && event.title}
           li5={event && event.title}
-          link="#teste"
+          link="#CreateRoomSection"
         />
         <div className="SectionsEvents">
           <ToggleSection
@@ -76,19 +76,21 @@ function EventDetails() {
           />
           <ImageCard />
         </div>
-        {loggedIn && (
-          /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
-          <>
-            <CreateRoom refreshProjects={getEvents} id="teste" />
-          </>
-        )}
-        {!loggedIn && (
-          /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
-          <>
-            <Login />
-          </>
-        )}
-        {/* <ImageComparison /> */}
+        <div id="CreateRoomSection">
+          {loggedIn && (
+            /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
+            <>
+              <CreateRoom refreshProjects={getEvents} id="teste" />
+            </>
+          )}
+          {!loggedIn && (
+            /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */
+            <>
+              <Login />
+            </>
+          )}
+          {/* <ImageComparison /> */}
+        </div>
       </div>
     </div>
   );

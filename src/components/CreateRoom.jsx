@@ -5,7 +5,7 @@ import axios from "axios";
 
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
-  const [palette, setPalette] = useState('')
+  const [palette, setPalette] = useState("");
 
   const { id } = useParams();
 
@@ -14,7 +14,7 @@ function CreateRoom(props) {
   const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
-  const handlePalette = (e) => setPalette(e.target.value)
+  const handlePalette = (e) => setPalette(e.target.value);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,22 +46,31 @@ function CreateRoom(props) {
 
   return (
     <div className="CreateRoom">
-      <h3>CreateRoom</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="userRoomName">Room name</label>
-        <input
-          type="text"
-          name="userRoomName"
-          value={userRoomName}
-          onChange={handleUserRoomName}
-        />
-        <select name="roomColor" onClick={handlePalette}>
-              <option  value="default">Default</option>
-              <option  value="grey">Grey</option>
-              <option  value="purple">Purple</option>
-              <option  value="burgund">Burgundi</option>
-        </select> 
-        <button type="submit">Create Room</button>
+        <div class="conteudo">
+          <h1>CreateRoom</h1>
+          <div className="meu-box">
+            <input
+              type="text"
+              name="userRoomName"
+              value={userRoomName}
+              onChange={handleUserRoomName}
+              placeholder="Room name"
+            />
+            <label htmlFor="userRoomName">Room name</label>
+          </div>
+          <div className="meu-box">
+            <select name="roomColor" onClick={handlePalette}>
+              <option value="default">Default</option>
+              <option value="grey">Grey</option>
+              <option value="purple">Purple</option>
+              <option value="burgund">Burgundi</option>
+            </select>
+          </div>
+          <button className="button-89" type="submit">
+            Create Room
+          </button>
+        </div>
       </form>
     </div>
   );

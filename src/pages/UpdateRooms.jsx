@@ -68,28 +68,35 @@ function UpdateRooms() {
 
   return (
     <div className="EditRoomPage">
-      <h3>Edit room</h3>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="userRoomName">New room name</label>
-        <input
-          type="text"
-          name="userRoomName"
-          value={userRoomName}
-          onChange={handleUserRoomName}
-        />
-        <label htmlFor="palette">Palette</label>
-        <input
-          type="text"
-          name="palette"
-          value={palette}
-          onChange={handlePalette}
-        />
-
-        <button type="submit">Edit Room</button>
+        <div class="conteudo">
+          <h1>Edit room</h1>
+          <div className="meu-box">
+            <input
+              type="text"
+              name="userRoomName"
+              value={userRoomName}
+              onChange={handleUserRoomName}
+              placeholder="Room name"
+            />
+            <label htmlFor="userRoomName">New room name</label>
+          </div>
+          <div className="meu-box">
+            <select name="roomColor" onChange={handlePalette} value={palette}>
+              <option value="default">Default</option>
+              <option value="grey">Grey</option>
+              <option value="purple">Purple</option>
+              <option value="burgund">Burgundi</option>
+            </select>
+          </div>
+          <button className="button-89" type="submit">
+            Edit Room
+          </button>
+          <button className="button-89 btn-delete" onClick={deleteRoom}>
+            Delete room
+          </button>
+        </div>
       </form>
-
-      {/* Delete the room */}
-      <button onClick={deleteRoom}>Delete room</button>
     </div>
   );
 }

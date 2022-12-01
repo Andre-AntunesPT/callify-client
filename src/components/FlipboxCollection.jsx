@@ -43,7 +43,7 @@ function FlipboxCollection() {
               <h1>{event.title}</h1>
               <p>
                 <a href={`/events/${event._id}`}>
-                  <button className="button-89">Create a Room</button>
+                  <button className="button-89">View your rooms</button>
                 </a>
               </p>
             </div>

@@ -39,6 +39,11 @@ function Flipbox() {
                 <div className="square-container">
                   <h2 className="textshadow">{event.title}</h2>
                   <h3 className="textshadow">{event.description}</h3>
+                  <img
+                    src="/assets/images/right-arrow_callify.png"
+                    alt="Callify - Arrow"
+                    className="FlipArrow"
+                  />
                 </div>
                 <div className="flip-overlay"></div>
               </div>
