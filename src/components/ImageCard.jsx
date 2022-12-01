@@ -4,7 +4,7 @@ function ImageCard(props) {
   return (
     <section>
       <div className="card-image">
-        <img src="/assets/images/home-bg.jpeg" alt="Card" />
+        <img src="/assets/images/event-details-card.jpg" alt="Card" />
       </div>
     </section>
   );
