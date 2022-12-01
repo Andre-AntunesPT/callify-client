@@ -23,7 +23,7 @@ function VideoBG() {
         <div className="hero-image">
           <div className="hero-text">
             <h1>Callify</h1>
-            <p>Simple way to make videocalls. No downloads, just a link.</p>
+            <p>Simple way to make video calls. No downloads, just a link.</p>
             <a href="/events">
               <button className="button-87">Discover More</button>
             </a>

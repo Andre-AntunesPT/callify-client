@@ -34,7 +34,7 @@ function Events() {
   return (
     <div className="CollectionListPage">
       <div className="CollectionPage">
-        <Hero title="My Collection" description="Check out your collection" />
+        <Hero title="Collection" description="Check out your collection" />
       </div>
       <div className="CollectionCards">
         <div id="all-events">

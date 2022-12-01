@@ -457,7 +457,8 @@ img.profile-icon {
 
 .EventsPage .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/images/home-bg.jpeg");
+    url("../public/assets/images/events-callify.jpg");
+  background-color: black;
   min-height: 80vh;
 }
 
@@ -472,7 +473,7 @@ img.profile-icon {
 
 .SingleEventPage .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/images/home-bg.jpeg");
+    url("../public/assets/images/event-details-callify.jpg");
   min-height: 80vh;
 }
 
@@ -487,7 +488,7 @@ img.profile-icon {
 
 .CollectionPage .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/images/home-bg.jpeg");
+    url("../public/assets/images/event-details-callify.jpg");
   min-height: 50vh;
 }
 
@@ -565,7 +566,7 @@ div#all-events {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/images/home-bg.jpeg");
+    url("../public/assets/images/events-callify.jpg");
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -632,7 +633,7 @@ div#all-events {
 }
 
 .TeamMemberSection {
-  padding: 5vh 0;
+  padding: 10vh 0;
 }
 
 @-webkit-keyframes slide-top {
@@ -873,6 +874,7 @@ div#all-events {
 
 .EventCard.card ul li {
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .EventCard.card ul li:before {
@@ -884,6 +886,7 @@ div#all-events {
 .EventCard .title {
   color: white;
   font-size: 18px;
+  text-align: left;
 }
 
 .EventCard p {
@@ -1250,6 +1253,7 @@ form option {
 .ProfilePage img {
   margin: 50px;
   border-radius: 50%;
+  max-height: 200px;
 }
 
 .EditProfilePage {

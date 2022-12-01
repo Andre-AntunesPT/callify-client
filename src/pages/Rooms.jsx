@@ -6,7 +6,7 @@ import axios from "axios";
 function Rooms() {
   /* declare the state */
   const [rooms, setRooms] = useState([]);
-  const [myRoom, setMyRoom] = useState(false);
+  const [date, setDate] = useState("");
   const [eventId, setEventId] = useState("");
 
   const { user } = useContext(AuthContext);
@@ -27,12 +27,15 @@ function Rooms() {
 
       setRooms(response.data);
       setEventId(response.data.event);
-      
-      if (response.data[10].user === user._id) {
-        setMyRoom(true);
+      console.log(response.data);
+
+      let i;
+      for (i = 0; i < response.data.length; i++) {
+        const sliceDate = response.data[i].startDate.slice(0, 10);
+        setDate(sliceDate);
       }
-      console.log(response.data[10].user);
-      console.log(user._id);
+
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -57,15 +60,19 @@ function Rooms() {
 
   return (
     <div className="RoomsListPage">
-      {myRoom &&
+      {rooms &&
         rooms.map((room) => {
           return (
             <div key={room._id} class="RoomsCard square-flip">
               <div className="square">
                 <div className="square-container">
                   <h2 className="textshadow">{room.userRoomName}</h2>
-                  <p className="textshadow">Created at:</p>
-                  <p className="textshadow">{room.startDate}</p>
+                  <p className="textshadow">{date}</p>
+                  <img
+                    src="/assets/images/right-arrow_callify.png"
+                    alt="Callify - Arrow"
+                    className="FlipArrow"
+                  />
                 </div>
                 <div className="flip-overlay"></div>
               </div>

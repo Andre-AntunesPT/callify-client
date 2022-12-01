@@ -21,7 +21,7 @@ function Navbar() {
             <li>
               <a href="/events">Events</a>
             </li>
-            <li>{loggedIn && <a href="/rooms">My Rooms</a>}</li>
+            <li>{loggedIn && <a href="/rooms">Rooms</a>}</li>
             <li>{loggedIn && <a href="/collection">Collection</a>}</li>
             {loggedIn && (
               <li>

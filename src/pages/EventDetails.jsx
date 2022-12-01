@@ -88,7 +88,6 @@ function EventDetails() {
             li1="No chat"
             li2="Youtube Integration"
             li3="Host Spotlight"
-            li4="Option to change the name"
             link="#CreateRoomSection"
           />
         )}
@@ -156,7 +155,6 @@ function EventDetails() {
           )}
           <ImageCard />
         </div>
-        <Collapsed />
         <div id="CreateRoomSection">
           {loggedIn && (
             /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */

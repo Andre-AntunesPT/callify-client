@@ -37,6 +37,8 @@ function CreateRoom(props) {
         }
       );
 
+      console.log(createdRoom)
+
       /* Clear the inputs */
       setUserRoomName("");
       /* setRoomMode(""); */
