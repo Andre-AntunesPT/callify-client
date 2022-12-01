@@ -13,6 +13,7 @@ function Events() {
   /* declare the state */
   const [events, setEvents] = useState([]);
   const { loggedIn } = useContext(AuthContext);
+  const [numberCounter, setNumberCounter] = useState(0);
 
   /* function to call the API */
   const getEvents = async () => {
@@ -27,18 +28,40 @@ function Events() {
       );
 
       setEvents(response.data);
+      setNumberCounter(
+        response.data[0].rooms.length +
+          response.data[1].rooms.length +
+          response.data[2].rooms.length +
+          response.data[3].rooms.length
+      );
+
       console.log(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 
+  /*  let numberCounter = 0; */
   useEffect(() => {
     getEvents();
   }, []);
 
-  /* const numberCounter = events[1].rooms.length; */
-  const numberCounter = 17;
+  /*   const getCount = () => {
+    if (!loading) {
+      console.log(events);
+      numberCounter += events[0].rooms.length;
+    }
+  };
+
+  useEffect(() => {
+    getCount();
+  }, [loading]); */
+
+  /* const numberCounter =
+    events[0].rooms.length +
+    events[1].rooms.length +
+    events[2].rooms.length +
+    events[3].rooms.length; */
 
   return (
     <div className="EventsListPage">
