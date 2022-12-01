@@ -1,12 +1,15 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../contexts/auth.context";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import LoginIframe from "../components/LoginIframe";
 import axios from "axios";
 
 function RoomDetails() {
   /* Apesar de ser um objecto coloca-se null senão vai ler como undefined */
   const [room, setRoom] = useState(null);
   const [eventId, setEventId] = useState("");
+
+  const { loggedIn } = useContext(AuthContext);
 
   const { id } = useParams();
   const { user } = useContext(AuthContext);
@@ -52,7 +55,7 @@ function RoomDetails() {
 
   return (
     <div className="RoomDetails">
-      {room && (
+      {loggedIn && room && (
         /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content) */
         <>
           <div className="RoomHeader">
@@ -78,6 +81,11 @@ function RoomDetails() {
             className="iframe-teste"
             title="iframe"
           ></iframe>
+        </>
+      )}
+      {!loggedIn && (
+        <>
+          <LoginIframe />
         </>
       )}
 

@@ -5,6 +5,7 @@ import axios from "axios";
 
 function CreateRoom(props) {
   const [userRoomName, setUserRoomName] = useState("");
+  /* const [roomMode, setRoomMode] = useState(""); */
   const [palette, setPalette] = useState("");
 
   const { id } = useParams();
@@ -14,6 +15,7 @@ function CreateRoom(props) {
   const navigate = useNavigate();
 
   const handleUserRoomName = (e) => setUserRoomName(e.target.value);
+  /* const handleRoomMode = (e) => setUserRoomName(e.target.value); */
   const handlePalette = (e) => setPalette(e.target.value);
 
   const handleSubmit = async (e) => {
@@ -26,6 +28,7 @@ function CreateRoom(props) {
         {
           userRoomName,
           palette,
+          /* roomMode, */
           eventId: id,
           userId: user._id,
         },
@@ -36,6 +39,7 @@ function CreateRoom(props) {
 
       /* Clear the inputs */
       setUserRoomName("");
+      /* setRoomMode(""); */
 
       /* redirect */
       navigate(`/rooms/${createdRoom.data._id}`);
@@ -48,7 +52,18 @@ function CreateRoom(props) {
     <div className="CreateRoom">
       <form onSubmit={handleSubmit}>
         <div class="conteudo">
-          <h1>CreateRoom</h1>
+          <h1>Create Room</h1>
+          {/* 
+          <div className="meu-box">
+            <input
+              type="text"
+              name="roomMode"
+              value={"group"}
+              onChange={handleRoomMode}
+              placeholder="Room name"
+            />
+            <label htmlFor="roomMode">Room mode</label>
+          </div> */}
           <div className="meu-box">
             <input
               type="text"
@@ -57,7 +72,7 @@ function CreateRoom(props) {
               onChange={handleUserRoomName}
               placeholder="Room name"
             />
-            <label htmlFor="userRoomName">Room name</label>
+            <label htmlFor="userRoomMode">Room name</label>
           </div>
           <div className="meu-box">
             <select name="roomColor" onClick={handlePalette}>
