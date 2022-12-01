@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import CreateRoom from "../components/CreateRoom";
 import ToggleSection from "../components/ToggleSection";
+import Collapsed from "../components/Collapsed";
 import ImageCard from "../components/ImageCard";
 import EventCard from "../components/EventCard";
 import Login from "../components/Login";
@@ -76,6 +77,7 @@ function EventDetails() {
           />
           <ImageCard />
         </div>
+        <Collapsed />
         <div id="CreateRoomSection">
           {loggedIn && (
             /* React Fragment <> </> if we don't want to specify a parent - doesn't add anything to the HTML (only its content)  */

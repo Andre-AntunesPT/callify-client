@@ -1,5 +1,5 @@
 import React from "react";
-
+/* 
 const coll = document.getElementsByClassName("collapsible");
 let i;
 
@@ -13,7 +13,7 @@ for (i = 0; i < coll.length; i++) {
       content.style.maxHeight = content.scrollHeight + "px";
     }
   });
-}
+} */
 
 function ToggleSection(props) {
   return (
