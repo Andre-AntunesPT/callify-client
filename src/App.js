@@ -1,25 +1,105 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { useState, useContext } from "react";
+
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+
+import Home from "./pages/Home";
+import Events from "./pages/Events";
+import Rooms from "./pages/Rooms";
+import Collection from "./pages/Collection";
+import EventDetails from "./pages/EventDetails";
+import RoomDetails from "./pages/RoomDetails";
+import UpdateRooms from "./pages/UpdateRooms";
+import Spinner from "./components/Spinner";
+
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Anon from "./components/Anon";
+import Profile from "./pages/Profile";
+import UpdateProfile from "./pages/UpdateProfile";
+
+import Private from "./components/Private";
+import { AuthContext } from "./contexts/auth.context";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const { loggedIn } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
+  if (window.location.pathname === "/") {
+    setTimeout(() => {
+      setLoading(false);
+    }, 0);
+  } else {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }
+
+  if (loading) {
+    return <Spinner />;
+  } else {
+    return (
+      <div className="App">
+        <Navbar />
+
+        <div className="Wrapper" id="WrapperCallify">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/events" element={<Events />} />
+            <Route
+              path="/rooms"
+              element={
+                <Private>
+                  <Rooms />
+                </Private>
+              }
+            />
+            <Route
+              path="/collection"
+              element={
+                <Private>
+                  <Collection />
+                </Private>
+              }
+            />
+            <Route path="/events/:id" element={<EventDetails />} />
+            {/* <Route
+              path="/rooms/:id"
+              element={
+                <Private>
+                  <RoomDetails />
+                </Private>
+              }
+            /> */}
+            <Route path="/rooms/:id" element={<RoomDetails />} />
+            <Route path="/rooms/edit/:id" element={<UpdateRooms />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/edit/:id" element={<UpdateProfile />} />
+            <Route
+              path="/signup"
+              element={
+                <Anon>
+                  <Signup />
+                </Anon>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <Anon>
+                  <Login />
+                </Anon>
+              }
+            />
+          </Routes>
+        </div>
+
+        <div className="WrapperBackground"></div>
+      </div>
+    );
+  }
 }
 
 export default App;
