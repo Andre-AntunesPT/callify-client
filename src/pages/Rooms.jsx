@@ -6,7 +6,6 @@ import axios from "axios";
 function Rooms() {
   /* declare the state */
   const [rooms, setRooms] = useState([]);
-  const [myRoom, setMyRoom] = useState(false);
   const [eventId, setEventId] = useState("");
 
   const { user } = useContext(AuthContext);
@@ -27,11 +26,9 @@ function Rooms() {
 
       setRooms(response.data);
       setEventId(response.data.event);
+    
       
-      if (response.data[10].user === user._id) {
-        setMyRoom(true);
-      }
-      console.log(response.data[10].user);
+      
       console.log(user._id);
     } catch (error) {
       console.log(error);
@@ -57,7 +54,7 @@ function Rooms() {
 
   return (
     <div className="RoomsListPage">
-      {myRoom &&
+      {rooms &&
         rooms.map((room) => {
           return (
             <div key={room._id} class="RoomsCard square-flip">
