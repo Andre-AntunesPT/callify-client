@@ -61,7 +61,7 @@ function EventDetails() {
             h1={event && event.title}
             pTitle={event && event.description}
             p="Webinar Teste"
-            li1={event && event.title}
+            li1="dfsdf"
             li2={event && event.title}
             li3={event && event.title}
             li4={event && event.title}
