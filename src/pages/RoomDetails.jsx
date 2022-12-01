@@ -75,12 +75,42 @@ function RoomDetails() {
               </button>
             </div>
           </div>
-          <iframe
-            src={room.roomUrl}
-            allow="camera; microphone; fullscreen; speaker; display-capture >"
-            className="iframe-teste"
-            title="iframe"
-          ></iframe>
+          {/* Webinar - Não apagar ID */}
+          {room.event === "63864304b5461f5ed5d8320e" && (
+            <iframe
+              src={`${room.roomUrl}`}
+              allow="camera; microphone; fullscreen; speaker; display-capture >"
+              className="iframe-teste"
+              title="iframe"
+            ></iframe>
+          )}
+          {/* E-learning - Não apagar ID  */}
+          {room.event === "638642e8b5461f5ed5d8320c" && (
+            <iframe
+              src={`${room.roomUrl}?chat=off`}
+              allow="camera; microphone; fullscreen; speaker; display-capture >"
+              className="iframe-teste"
+              title="iframe"
+            ></iframe>
+          )}
+          {/* Team meeting - Não apagar ID  */}
+          {room.event === "63864310b5461f5ed5d83210" && (
+            <iframe
+              src={`${room.roomUrl}?chat=off`}
+              allow="camera; microphone; fullscreen; speaker; display-capture >"
+              className="iframe-teste"
+              title="iframe"
+            ></iframe>
+          )}
+          {/* Telehealth - Não apagar ID  */}
+          {room.event === "6386431cb5461f5ed5d83212" && (
+            <iframe
+              src={`${room.roomUrl}?chat=off`}
+              allow="camera; microphone; fullscreen; speaker; display-capture >"
+              className="iframe-teste"
+              title="iframe"
+            ></iframe>
+          )}
         </>
       )}
       {!loggedIn && (
