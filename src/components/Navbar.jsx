@@ -22,7 +22,7 @@ function Navbar() {
               <a href="/events">Events</a>
             </li>
             <li>{loggedIn && <a href="/rooms">My Rooms</a>}</li>
-            <li>{loggedIn && <a href="/collection">My Collection</a>}</li>
+            <li>{loggedIn && <a href="/collection">Collection</a>}</li>
             {loggedIn && (
               <li>
                 <a href="/rooms" onClick={logout}>
