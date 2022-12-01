@@ -10,11 +10,9 @@ function Collapsed() {
       <div class="collapsible-content">
         <div class="content-inner">
           <p>
-            QUnit is by calling one of the object that are embedded in
-            JavaScript, and faster JavaScript program could also used with its
-            elegant, well documented, and functional programming using JS, HTML
-            pages Modernizr is a popular browsers without plug-ins. Test-Driven
-            Development.
+          The rooms have pre configurations. Some of them are: 
+          <br/>
+          <i>no chat</i> - so participants won't have distractions and only talk when the host allows | <i>settings button off</i> - so participants can't change the settings | <i>breakout allowed</i> - create groups on the video call, so participants can have small group discussions.
           </p>
         </div>
       </div>
