@@ -33,7 +33,8 @@ function EventDetails() {
 
       setEvent(response.data);
       //setRoom(response.data);
-      console.log(response.data.rooms);
+      console.log(response.data);
+      console.log(response.data.title);
     } catch (error) {
       console.log(error);
     }
@@ -54,26 +55,112 @@ function EventDetails() {
         />
       </div>
       <div className="TranslateSection">
-        <EventCard
-          h1={event && event.title}
-          pTitle={event && event.description}
-          p={event && event.description}
-          li1={event && event.title}
-          li2={event && event.title}
-          li3={event && event.title}
-          li4={event && event.title}
-          li5={event && event.title}
-          link="#CreateRoomSection"
-        />
-        <div className="SectionsEvents">
-          <ToggleSection
-          title1="Easy"
-            description1="The easiest way to configure online learning and virtual classrooms."
-            title2="Simple"
-            description2="Set up the room and start delivering the best online experiences on your meetings."
-            title3="Secure"
-            description3="The rooms are safe for hosts and participants. Control who can access a call and what they can do in the calls."
+        {/* Webinar - Não apagar ID */}
+        {id === "63864304b5461f5ed5d8320e" && (
+          <EventCard
+            h1={event && event.title}
+            pTitle={event && event.description}
+            p="Webinar Teste"
+            li1={event && event.title}
+            li2={event && event.title}
+            li3={event && event.title}
+            li4={event && event.title}
+            li5={event && event.title}
+            link="#CreateRoomSection"
           />
+        )}
+        {/* E-learning - Não apagar ID  */}
+        {id === "638642e8b5461f5ed5d8320c" && (
+          <EventCard
+            h1={event && event.title}
+            pTitle={event && event.description}
+            p="E-learning Teste"
+            li1={event && event.title}
+            li2={event && event.title}
+            li3={event && event.title}
+            li4={event && event.title}
+            li5={event && event.title}
+            link="#CreateRoomSection"
+          />
+        )}
+        {/* Team meeting - Não apagar ID  */}
+        {id === "63864310b5461f5ed5d83210" && (
+          <EventCard
+            h1={event && event.title}
+            pTitle={event && event.description}
+            p="Team meeting Teste"
+            li1={event && event.title}
+            li2={event && event.title}
+            li3={event && event.title}
+            li4={event && event.title}
+            li5={event && event.title}
+            link="#CreateRoomSection"
+          />
+        )}
+        {/* Telehealth - Não apagar ID  */}
+        {id === "6386431cb5461f5ed5d83212" && (
+          <EventCard
+            h1={event && event.title}
+            pTitle={event && event.description}
+            p="Telehealth Teste"
+            li1={event && event.title}
+            li2={event && event.title}
+            li3={event && event.title}
+            li4={event && event.title}
+            li5={event && event.title}
+            link="#CreateRoomSection"
+          />
+        )}
+
+        <div className="SectionsEvents">
+          {/* Webinar - Não apagar ID */}
+          {id === "63864304b5461f5ed5d8320e" && (
+            <ToggleSection
+              title="Easy Webinar"
+              title1="Easy"
+              description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+              title2="Simple"
+              description2="Set up the room and start delivering the best online experiences for students and teachers. "
+              title3="Secure"
+              description3="The E-Learning room is safe for staff and students. Control who can access a call and what students can do in the meeting."
+            />
+          )}
+          {/* E-learning - Não apagar ID  */}
+          {id === "638642e8b5461f5ed5d8320c" && (
+            <ToggleSection
+              title="Easy learning"
+              title1="Easy"
+              description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+              title2="Simple"
+              description2="Set up the room and start delivering the best online experiences for students and teachers. "
+              title3="Secure"
+              description3="The E-Learning room is safe for staff and students. Control who can access a call and what students can do in the meeting."
+            />
+          )}
+          {/* Team meeting - Não apagar ID  */}
+          {id === "63864310b5461f5ed5d83210" && (
+            <ToggleSection
+              title="Easy Team"
+              title1="Easy"
+              description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+              title2="Simple"
+              description2="Set up the room and start delivering the best online experiences for students and teachers. "
+              title3="Secure"
+              description3="The E-Learning room is safe for staff and students. Control who can access a call and what students can do in the meeting."
+            />
+          )}
+          {/* Telehealth - Não apagar ID  */}
+          {id === "6386431cb5461f5ed5d83212" && (
+            <ToggleSection
+              title="Easy Telehealth"
+              title1="Easy"
+              description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+              title2="Simple"
+              description2="Set up the room and start delivering the best online experiences for students and teachers. "
+              title3="Secure"
+              description3="The E-Learning room is safe for staff and students. Control who can access a call and what students can do in the meeting."
+            />
+          )}
           <ImageCard />
         </div>
         <Collapsed />

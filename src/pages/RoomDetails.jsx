@@ -28,7 +28,7 @@ function RoomDetails() {
 
       setRoom(response.data);
       setEventId(response.data.event);
-      console.log(response.data);
+      console.log(response.data.event);
     } catch (error) {
       console.log(error);
     }
@@ -118,7 +118,7 @@ function RoomDetails() {
           <LoginIframe />
         </>
       )}
-{/* 
+      {/* 
       <button onClick={deleteRoom}>Delete Room</button> */}
 
       {/* {event &&
