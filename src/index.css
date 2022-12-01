@@ -398,6 +398,17 @@ img.profile-icon {
   animation: rotating 2s linear infinite;
 }
 
+/* VIDEO BG */
+
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  opacity: 0.5;
+}
+
 /* HERO */
 
 .hero-image {
@@ -428,10 +439,11 @@ img.profile-icon {
 /* Home HERO */
 
 .HomePage .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/images/home-bg.jpeg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../public/assets/images/home-bg.jpeg"); */
   min-height: 100vh;
   margin-top: 0px;
+  background-color: black;
 }
 
 .HomePage .hero-image .hero-text {
@@ -465,7 +477,7 @@ img.profile-icon {
 }
 
 .SingleEventPage .hero-image .hero-text {
-  top: 25vh;
+  top: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -822,8 +834,8 @@ div#all-events {
     transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-20%);
-    transform: translateY(-20%);
+    -webkit-transform: translateY(-12%);
+    transform: translateY(-12%);
   }
 }
 @keyframes slide-top {
@@ -832,8 +844,8 @@ div#all-events {
     transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-20%);
-    transform: translateY(-20%);
+    -webkit-transform: translateY(-12%);
+    transform: translateY(-12%);
   }
 }
 

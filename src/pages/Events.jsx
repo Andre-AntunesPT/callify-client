@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../contexts/auth.context";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { HashLink as LinkAnchor } from "react-router-hash-link";
@@ -11,6 +12,7 @@ import TeamMember from "../components/TeamMember";
 function Events() {
   /* declare the state */
   const [events, setEvents] = useState([]);
+  const { loggedIn } = useContext(AuthContext);
 
   /* function to call the API */
   const getEvents = async () => {
@@ -36,7 +38,7 @@ function Events() {
   }, []);
 
   /* const numberCounter = events[1].rooms.length; */
-  const numberCounter = 100;
+  const numberCounter = 17;
 
   return (
     <div className="EventsListPage">
@@ -61,9 +63,16 @@ function Events() {
       </div>
       <div className="CTASection">
         <h1 id="his">Create a beautiful room right now!</h1>
-        <a href="/signup">
-          <button className="button-87">Signup now!</button>
-        </a>
+        {loggedIn && (
+          <a href="/profile">
+            <button className="button-87">Signup now!</button>
+          </a>
+        )}
+        {!loggedIn && (
+          <a href="/signup">
+            <button className="button-87">Signup now!</button>
+          </a>
+        )}
       </div>
       <div className="TeamMemberSection">
         <TeamMember />

@@ -19,16 +19,16 @@ function ToggleSection(props) {
   return (
     <section className="ToggleSection">
       <h2>{props.title}</h2>
-      <button class="collapsible">{props.title1}</button>
-      <div class="content">
+      <button className="collapsible">{props.title1}</button>
+      <div className="content">
         <p>{props.description1}</p>
       </div>
-      <button class="collapsible">{props.title2}</button>
-      <div class="content">
+      <button className="collapsible">{props.title2}</button>
+      <div className="content">
         <p>{props.description2}</p>
       </div>
-      <button class="collapsible">{props.title3}</button>
-      <div class="content">
+      <button className="collapsible">{props.title3}</button>
+      <div className="content">
         <p>{props.description3}</p>
       </div>
     </section>
