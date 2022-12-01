@@ -21,13 +21,13 @@ function FlipboxCollection() {
         }
       );
 
-      let filteredRooms = response.data.events.rooms.filter(
+      /*  let filteredRooms = response.data.events.rooms.filter(
         (room) => room.user === user._id
-      );
+      ); */
 
       console.log(response.data.events);
 
-      setEvents(filteredRooms);
+      setEvents(response.data);
       console.log(response.data);
     } catch (error) {
       console.log(error);
