@@ -66,13 +66,13 @@ function EventDetails() {
         />
         <div className="SectionsEvents">
           <ToggleSection
-            title="Lorem Ipsum"
-            title1="Lorem Ipsum"
-            description1="Loresm Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
-            title2="Lorem Ipsum"
-            description2="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
-            title3="Lorem Ipsum"
-            description3="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"
+            title="Easy"
+            title1="Easy"
+            description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+            title2="Simple"
+            description2="Set up the room and start delivering the best online experiences for students and teachers. "
+            title3="Secure"
+            description3="The E-Learning room is safe for staff and students. Control who can access a call and what students can do in the meeting."
           />
           <ImageCard />
         </div>

@@ -87,7 +87,7 @@ function RoomDetails() {
           {/* E-learning - Não apagar ID  */}
           {room.event === "638642e8b5461f5ed5d8320c" && (
             <iframe
-              src={`${room.roomUrl}?chat=off&people=off&settingsButton=off&breakout=on`}
+              src={`${room.roomUrl}?chat=off&settingsButton=off&breakout=on`}
               allow="camera; microphone; fullscreen; speaker; display-capture >"
               className="iframe-teste"
               title="iframe"
