@@ -60,12 +60,10 @@ function EventDetails() {
           <EventCard
             h1={event && event.title}
             pTitle={event && event.description}
-            p="Webinar Teste"
-            li1="dfsdf"
-            li2={event && event.title}
-            li3={event && event.title}
-            li4={event && event.title}
-            li5={event && event.title}
+            p="Webinar configurations"
+            li1="Youtube Integration"
+            li2="Settings buttons off"
+            li3="People Count Off"
             link="#CreateRoomSection"
           />
         )}
@@ -74,12 +72,10 @@ function EventDetails() {
           <EventCard
             h1={event && event.title}
             pTitle={event && event.description}
-            p="E-learning Teste"
-            li1={event && event.title}
-            li2={event && event.title}
-            li3={event && event.title}
-            li4={event && event.title}
-            li5={event && event.title}
+            p="E-learning Configuration"
+            li1="No chat"
+            li2="Settings buttons off"
+            li3="Group breakout"
             link="#CreateRoomSection"
           />
         )}
@@ -88,12 +84,11 @@ function EventDetails() {
           <EventCard
             h1={event && event.title}
             pTitle={event && event.description}
-            p="Team meeting Teste"
-            li1={event && event.title}
-            li2={event && event.title}
-            li3={event && event.title}
-            li4={event && event.title}
-            li5={event && event.title}
+            p="Team Meeting Configuration"
+            li1="No chat"
+            li2="Youtube Integration"
+            li3="Host Spotlight"
+            li4="Option to change the name"
             link="#CreateRoomSection"
           />
         )}
@@ -102,12 +97,10 @@ function EventDetails() {
           <EventCard
             h1={event && event.title}
             pTitle={event && event.description}
-            p="Telehealth Teste"
-            li1={event && event.title}
-            li2={event && event.title}
-            li3={event && event.title}
-            li4={event && event.title}
-            li5={event && event.title}
+            p="Telehealth Room"
+            li1="Timer"
+            li2="People Count Off"
+            li3="Pre-call Review"
             link="#CreateRoomSection"
           />
         )}
@@ -116,21 +109,21 @@ function EventDetails() {
           {/* Webinar - Não apagar ID */}
           {id === "63864304b5461f5ed5d8320e" && (
             <ToggleSection
-              title="Easy Webinar"
+              title="Engaging Webinar"
               title1="Easy"
-              description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+              description1="Callify Webinar room is simple and fast to create. The easiest way make conferences"
               title2="Simple"
-              description2="Set up the room and start delivering the best online experiences for students and teachers. "
+              description2="Set up the room and start delivering the best online video calls."
               title3="Secure"
-              description3="The E-Learning room is safe for staff and students. Control who can access a call and what students can do in the meeting."
+              description3="Safe for everyone - limit the users access."
             />
           )}
           {/* E-learning - Não apagar ID  */}
           {id === "638642e8b5461f5ed5d8320c" && (
             <ToggleSection
-              title="Easy learning"
+              title="Safer E-Learning"
               title1="Easy"
-              description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+              description1="Callify E-Learning room is simple and fast to create. The easiest way to configure online learning and virtual classrooms."
               title2="Simple"
               description2="Set up the room and start delivering the best online experiences for students and teachers. "
               title3="Secure"
@@ -140,25 +133,25 @@ function EventDetails() {
           {/* Team meeting - Não apagar ID  */}
           {id === "63864310b5461f5ed5d83210" && (
             <ToggleSection
-              title="Easy Team"
+              title="Amazing Team Meetings"
               title1="Easy"
-              description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+              description1="Make easy and creative team meetings."
               title2="Simple"
-              description2="Set up the room and start delivering the best online experiences for students and teachers. "
+              description2="Set up the room and start delivering great experiences for your team."
               title3="Secure"
-              description3="The E-Learning room is safe for staff and students. Control who can access a call and what students can do in the meeting."
+              description3="With Callify the video calls are safe for everyone."
             />
           )}
           {/* Telehealth - Não apagar ID  */}
           {id === "6386431cb5461f5ed5d83212" && (
             <ToggleSection
-              title="Easy Telehealth"
+              title="Reliable Telehealth"
               title1="Easy"
-              description1="Callify E-Learning room is simple and fast to crate. The easiest way to configure online learning and virtual classrooms."
+              description1="Fast to create and simple to configure."
               title2="Simple"
-              description2="Set up the room and start delivering the best online experiences for students and teachers. "
+              description2="With Callify your consults are reliable and simple."
               title3="Secure"
-              description3="The E-Learning room is safe for staff and students. Control who can access a call and what students can do in the meeting."
+              description3="Safer for doctors and patients."
             />
           )}
           <ImageCard />

@@ -96,7 +96,7 @@ function RoomDetails() {
           {/* Team meeting - Não apagar ID  */}
           {room.event === "63864310b5461f5ed5d83210" && (
             <iframe
-              src={`${room.roomUrl}?chat=off&autoSpotlight&subgridLabels=on`}
+              src={`${room.roomUrl}?chat=off&autoSpotlight&subgridLabels=on&roomIntegrations`}
               allow="camera; microphone; fullscreen; speaker; display-capture >"
               className="iframe-teste"
               title="iframe"
@@ -105,7 +105,7 @@ function RoomDetails() {
           {/* Telehealth - Não apagar ID  */}
           {room.event === "6386431cb5461f5ed5d83212" && (
             <iframe
-              src={`${room.roomUrl}?people=off&timer=on`}
+              src={`${room.roomUrl}?people=off&timer=on&precallReview=on`}
               allow="camera; microphone; fullscreen; speaker; display-capture >"
               className="iframe-teste"
               title="iframe"
