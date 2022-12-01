@@ -79,7 +79,7 @@ function UpdateRooms() {
               onChange={handleUserRoomName}
               placeholder="Room name"
             />
-            {/*   <label htmlFor="userRoomName">New room name</label>
+            <label htmlFor="userRoomName">New room name</label>
           </div>
           <div className="meu-box">
             <select name="roomColor" onChange={handlePalette} value={palette}>
@@ -87,14 +87,14 @@ function UpdateRooms() {
               <option value="grey">Grey</option>
               <option value="purple">Purple</option>
               <option value="burgund">Burgundi</option>
-            </select> */}
+            </select>
 
-            <select name="roomColor" onClick={handlePalette}>
+            {/* <select name="roomColor" onClick={handlePalette}>
               <option value="default">Default</option>
               <option value="grey">Grey</option>
               <option value="purple">Purple</option>
               <option value="burgund">Burgundi</option>
-            </select>
+            </select> */}
           </div>
           <button className="button-89" type="submit">
             Edit Room
