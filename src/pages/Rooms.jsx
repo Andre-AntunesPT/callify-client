@@ -7,6 +7,7 @@ function Rooms() {
   /* declare the state */
   const [rooms, setRooms] = useState([]);
   const [date, setDate] = useState("");
+  /* const [event, setEvent] = useState(""); */
   const [eventId, setEventId] = useState("");
 
   const { user } = useContext(AuthContext);
@@ -25,7 +26,7 @@ function Rooms() {
         }
       );
 
-      setRooms(response.data);
+      /* setRooms(response.data); */
       setEventId(response.data.event);
       console.log(response.data);
 
@@ -35,7 +36,29 @@ function Rooms() {
         setDate(sliceDate);
       }
 
-      console.log(response.data);
+      /* let j;
+      for (j = 0; j < response.data.length; j++) {
+        const sliceEvent = response.data[i].event.title;
+        setEvent(sliceEvent);
+      } */
+
+      let responseData = response.data;
+      console.log(responseData);
+      /* let j;
+      for (j = 0; j < responseData.length; j++) {
+        const newResponse = responseData.filter(
+          (responseData) => responseData.user === user._id
+        );
+        setRooms(newResponse);
+      } */
+
+      const newResponse = responseData.filter(
+        (responseData) => responseData.user === user._id
+      );
+      setRooms(newResponse);
+
+      /* console.log(response.data[14].user);
+      console.log(user._id); */
     } catch (error) {
       console.log(error);
     }
@@ -44,9 +67,9 @@ function Rooms() {
   /* We need to call the function in a specific moment */
   useEffect(() => {
     getRooms();
-  }, [user]);
+  }, []);
 
-  const deleteRoom = async () => {
+  /* const deleteRoom = async () => {
     try {
       await axios.delete(
         `${process.env.REACT_APP_API_URL}/rooms/${rooms.id}/${user._id}/${eventId.id}`
@@ -56,7 +79,7 @@ function Rooms() {
     } catch (error) {
       console.log(error);
     }
-  };
+  }; */
 
   return (
     <div className="RoomsListPage">
@@ -83,9 +106,9 @@ function Rooms() {
                     <button className="button-89">Go to Room</button>
                   </Link>
 
-                  <button className="button-89 btn-delete" onClick={deleteRoom}>
+                  {/* <button className="button-89 btn-delete" onClick={deleteRoom}>
                     Delete room
-                  </button>
+                  </button> */}
                 </div>
                 <div className="flip-overlay"></div>
               </div>
