@@ -473,7 +473,7 @@ img.profile-icon {
 
 .SingleEventPage .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/images/home-bg.jpeg");
+    url("../public/assets/images/event-details-callify.jpg");
   min-height: 80vh;
 }
 
@@ -488,7 +488,7 @@ img.profile-icon {
 
 .CollectionPage .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../public/assets/images/home-bg.jpeg");
+    url("../public/assets/images/event-details-callify.jpg");
   min-height: 50vh;
 }
 
