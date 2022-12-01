@@ -8,7 +8,6 @@ function FlipboxCollection() {
   const [events, setEvents] = useState([]);
 
   const { user } = useContext(AuthContext);
-  
 
   /* function to call the API */
   const getEvents = async () => {
@@ -22,7 +21,9 @@ function FlipboxCollection() {
         }
       );
 
-      let filteredRooms = response.data.events.rooms.filter((room) => room.user === user._id);
+      let filteredRooms = response.data.events.rooms.filter(
+        (room) => room.user === user._id
+      );
 
       console.log(response.data.events);
 
@@ -50,7 +51,7 @@ function FlipboxCollection() {
                 </small>
               </h1>
               <h1>{event.title}</h1>
-              
+
               <p>
                 <a href={`/events/${event._id}`}>
                   <button className="button-89">View your rooms</button>

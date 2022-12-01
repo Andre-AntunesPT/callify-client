@@ -9,9 +9,6 @@
   .SectionsEvents {
     flex-wrap: wrap;
   }
-  .SingleEventPage .hero-image .hero-text {
-    display: none;
-  }
 }
 
 @media (max-width: 768px) {

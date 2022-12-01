@@ -465,7 +465,7 @@ img.profile-icon {
 }
 
 .SingleEventPage .hero-image .hero-text {
-  top: 25vh;
+  top: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -822,8 +822,8 @@ div#all-events {
     transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-20%);
-    transform: translateY(-20%);
+    -webkit-transform: translateY(-12%);
+    transform: translateY(-12%);
   }
 }
 @keyframes slide-top {
@@ -832,8 +832,8 @@ div#all-events {
     transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(-20%);
-    transform: translateY(-20%);
+    -webkit-transform: translateY(-12%);
+    transform: translateY(-12%);
   }
 }
 
