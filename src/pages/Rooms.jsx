@@ -7,8 +7,8 @@ function Rooms() {
   /* declare the state */
   const [rooms, setRooms] = useState([]);
   const [date, setDate] = useState("");
-  /* const [event, setEvent] = useState(""); */
-  const [eventId, setEventId] = useState("");
+  /* const [events, setEvents] = useState("");
+  const [eventTitle, setEventTitle] = useState(""); */
 
   const { user } = useContext(AuthContext);
 
@@ -27,7 +27,7 @@ function Rooms() {
       );
 
       /* setRooms(response.data); */
-      setEventId(response.data.event);
+      /* setEventId(response.data.event); */
       console.log(response.data);
 
       let i;
@@ -36,37 +36,39 @@ function Rooms() {
         setDate(sliceDate);
       }
 
-      /* let j;
-      for (j = 0; j < response.data.length; j++) {
-        const sliceEvent = response.data[i].event.title;
-        setEvent(sliceEvent);
-      } */
-
       let responseData = response.data;
-      console.log(responseData);
-      /* let j;
-      for (j = 0; j < responseData.length; j++) {
-        const newResponse = responseData.filter(
-          (responseData) => responseData.user === user._id
-        );
-        setRooms(newResponse);
-      } */
-
       const newResponse = responseData.filter(
         (responseData) => responseData.user === user._id
       );
       setRooms(newResponse);
-
-      /* console.log(response.data[14].user);
-      console.log(user._id); */
     } catch (error) {
       console.log(error);
     }
   };
 
+  /* function to call the API */
+  /* const getEvents = async () => {
+    try {
+      const storedToken = localStorage.getItem("authToken");
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/events`,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
+      );
+
+      setEvents(response.data);
+      setEventTitle(response.data.title);
+      console.log(response.data.title);
+    } catch (error) {
+      console.log(error);
+    }
+  }; */
+
   /* We need to call the function in a specific moment */
   useEffect(() => {
     getRooms();
+    /* getEvents(); */
   }, []);
 
   /* const deleteRoom = async () => {
@@ -90,6 +92,10 @@ function Rooms() {
               <div className="square">
                 <div className="square-container">
                   <h2 className="textshadow">{room.userRoomName}</h2>
+                  {/* {events &&
+                    events.map((event) => {
+                      return <p className="textshadow">{eventTitle}</p>;
+                    })} */}
                   <p className="textshadow">{date}</p>
                   <img
                     src="/assets/images/right-arrow_callify.png"
