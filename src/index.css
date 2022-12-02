@@ -442,7 +442,7 @@ img.profile-icon {
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../public/assets/images/home-bg.jpeg"); */
   min-height: 100vh;
-  margin-top: 0px;
+  margin-top: -100px;
   background-color: black;
 }
 
