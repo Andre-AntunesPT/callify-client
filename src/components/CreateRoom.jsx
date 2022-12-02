@@ -37,7 +37,7 @@ function CreateRoom(props) {
         }
       );
 
-      console.log(createdRoom)
+      console.log(createdRoom);
 
       /* Clear the inputs */
       setUserRoomName("");
@@ -77,7 +77,7 @@ function CreateRoom(props) {
             <label htmlFor="userRoomMode">Room name</label>
           </div>
           <div className="meu-box">
-            <select name="roomColor" onClick={handlePalette}>
+            <select name="roomColor" onClick={handlePalette} required>
               <option value="default">Default</option>
               <option value="grey">Grey</option>
               <option value="purple">Purple</option>
