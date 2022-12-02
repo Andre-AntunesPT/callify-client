@@ -78,6 +78,7 @@ function CreateRoom(props) {
           </div>
           <div className="meu-box">
             <select name="roomColor" onClick={handlePalette} required>
+              <option value="">Room Color</option>
               <option value="default">Default</option>
               <option value="grey">Grey</option>
               <option value="purple">Purple</option>
