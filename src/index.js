@@ -27,12 +27,18 @@ reportWebVitals();
 
 window.onload = function () {
   const welcomeOverlay = document.getElementById("welcome-overlay");
-  if (welcomeOverlay) {
+  setTimeout(function () {
     const headerLogo = document.getElementById("HeaderLogo");
     headerLogo.classList.add("home-animation");
     const Wrapper = document.getElementById("WrapperCallify");
     Wrapper.classList.add("home-padding");
-  }
+  }, 100);
+  /* if (welcomeOverlay) {
+    const headerLogo = document.getElementById("HeaderLogo");
+    headerLogo.classList.add("home-animation");
+    const Wrapper = document.getElementById("WrapperCallify");
+    Wrapper.classList.add("home-padding");
+  } */
   setTimeout(function () {
     document.getElementById("welcome-overlay").style.display = "none";
   }, 3000);
