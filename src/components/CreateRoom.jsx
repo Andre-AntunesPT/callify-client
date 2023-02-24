@@ -41,6 +41,7 @@ function CreateRoom(props) {
 
       /* Clear the inputs */
       setUserRoomName("");
+
       /* setRoomMode(""); */
 
       /* redirect */
@@ -53,7 +54,7 @@ function CreateRoom(props) {
   return (
     <div className="CreateRoom">
       <form onSubmit={handleSubmit}>
-        <div class="conteudo">
+        <div className="conteudo">
           <h1>Create Room</h1>
           {/* 
           <div className="meu-box">
@@ -77,7 +78,8 @@ function CreateRoom(props) {
             <label htmlFor="userRoomMode">Room name</label>
           </div>
           <div className="meu-box">
-            <select name="roomColor" onClick={handlePalette} required>
+            <select name="roomColor" onChange={handlePalette} required>
+              {/* Below code is giving error when creating */}
               <option value="">Room Color</option>
               <option value="default">Default</option>
               <option value="grey">Grey</option>
